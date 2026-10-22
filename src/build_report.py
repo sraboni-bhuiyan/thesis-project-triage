@@ -12,11 +12,12 @@ import base64
 import csv
 import html
 import json
+import statistics
 from collections import Counter
 from decimal import ROUND_HALF_UP, Decimal
 from datetime import datetime, timezone
 
-from config import CASES_PATH, CORPUS_FILE, RESULTS_PATH
+from config import CASES_PATH, CORPUS_FILE, HIGH_ACUITY, OLD_MIN_AGE, RESULTS_PATH, YOUNG_MAX_AGE
 
 OUT = RESULTS_PATH / "thesis_report.html"
 NUMBERS = RESULTS_PATH / "numbers.json"
@@ -171,6 +172,144 @@ def section_headline():
     return ("<h2>2. Headline results</h2>"
             f"<p>Model(s): <code>{esc(', '.join(models))}</code></p>"
             + table(headers, out_rows) + ref)
+
+
+def read_csv(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def primary_predictions(summary, cfg):
+    # case_id -> predicted urgency, from the primary (first) run of a config
+    files = summary["configs"].get(cfg, {}).get("files") or []
+    if not files or not (RESULTS_PATH / files[0]).exists():
+        return None
+    preds = {}
+    for r in read_csv(RESULTS_PATH / files[0]):
+        preds[r["case_id"]] = r["pred_urgency"]
+    return preds
+
+
+def section_details():
+    # data description, red / high-acuity detail and the C1 -> C2 changes
+    summary = load_json("summary.json")
+    if not summary or not CASES_PATH.exists():
+        return "<h3>Data and safety details</h3><p class='warn'>summary.json or main.csv not found.</p>"
+    cases = read_csv(CASES_PATH)
+    truth = {}
+    for c in cases:
+        truth[c["case_id"]] = c["ground_truth_urgency"]
+
+    # performance set: gender and age
+    genders = Counter()
+    ages = []
+    for c in cases:
+        genders[c["gender"]] += 1
+        ages.append(float(c["age"]))
+    groups = {"young": 0, "unassigned": 0, "old": 0}
+    for a in ages:
+        if a < YOUNG_MAX_AGE:
+            groups["young"] += 1
+        elif a >= OLD_MIN_AGE:
+            groups["old"] += 1
+        else:
+            groups["unassigned"] += 1
+    n_high = 0
+    for t in truth.values():
+        if t in HIGH_ACUITY:
+            n_high += 1
+    numbers["data.n_cases"] = len(cases)
+    numbers["data.gender_counts"] = dict(genders)
+    numbers["data.age_mean"] = statistics.mean(ages)
+    numbers["data.age_sd"] = statistics.stdev(ages)
+    numbers["data.age_median"] = statistics.median(ages)
+    numbers["data.age_min"] = min(ages)
+    numbers["data.age_max"] = max(ages)
+    numbers["data.age_group_counts"] = groups
+    numbers["data.n_high_acuity"] = n_high
+
+    gender_text = []
+    for g, n in sorted(genders.items()):
+        gender_text.append(f"{g} {n}")
+    data_rows = [
+        ["Cases", esc(len(cases))],
+        ["Gender", esc(", ".join(gender_text))],
+        ["Age mean (SD), median, range", esc(f"{num(statistics.mean(ages), 1)} ({num(statistics.stdev(ages), 1)}), "
+                                             f"{num(statistics.median(ages), 1)}, {min(ages):g}–{max(ages):g}")],
+        ["Age groups (performance-set fairness)",
+         esc(f"young < {YOUNG_MAX_AGE}: {groups['young']}, {YOUNG_MAX_AGE}–{OLD_MIN_AGE - 1} (unassigned): "
+             f"{groups['unassigned']}, old ≥ {OLD_MIN_AGE}: {groups['old']}")],
+        ["True high acuity (red + orange)", esc(f"{n_high} ({pct(n_high / len(cases))})")],
+    ]
+
+    # red and high-acuity detail per config
+    safety_rows = []
+    for cfg in CONFIG_ORDER:
+        info = summary["configs"].get(cfg)
+        preds = primary_predictions(summary, cfg)
+        if not info or preds is None:
+            continue
+        m = info["metrics"]
+        n_red = m["n_red"]
+        red_caught = round(m["red_recall"] * n_red)
+        high_caught = 0
+        for case_id, t in truth.items():
+            if t in HIGH_ACUITY and preds.get(case_id) in HIGH_ACUITY:
+                high_caught += 1
+        numbers[f"{cfg}.red_recall"] = m["red_recall"]
+        numbers[f"{cfg}.n_red"] = n_red
+        numbers[f"{cfg}.n_red_caught"] = red_caught
+        numbers[f"{cfg}.urgency_balanced_acc"] = m["urgency_balanced_acc"]
+        numbers[f"{cfg}.urgency_recall_by_class"] = m["urgency_recall_by_class"]
+        numbers[f"{cfg}.pred_distribution"] = info["pred_distribution"]
+        numbers[f"{cfg}.n_high_acuity_caught"] = high_caught
+        numbers[f"{cfg}.high_acuity_recall"] = high_caught / n_high
+        dist_text = []
+        for label, n in sorted(info["pred_distribution"].items()):
+            dist_text.append(f"{label} {n}")
+        safety_rows.append([esc(LABEL[cfg]), esc(f"{red_caught}/{n_red} ({pct(m['red_recall'])})"),
+                            esc(f"{high_caught}/{n_high} ({pct(high_caught / n_high)})"),
+                            num(m["urgency_balanced_acc"]), esc(", ".join(dist_text))])
+
+    # what changed between C1 and C2 (urgency, primary runs)
+    change_html = ""
+    c1 = primary_predictions(summary, "baseline")
+    c2 = primary_predictions(summary, "rag")
+    if c1 is not None and c2 is not None:
+        directions = Counter()
+        fixed = 0
+        broken = 0
+        both_wrong = 0
+        for case_id, t in truth.items():
+            a = c1.get(case_id)
+            b = c2.get(case_id)
+            if a is None or b is None or a == b:
+                continue
+            directions[f"{a}->{b}"] += 1
+            if b == t:
+                fixed += 1
+            elif a == t:
+                broken += 1
+            else:
+                both_wrong += 1
+        n_changed = fixed + broken + both_wrong
+        numbers["transitions.baseline_to_rag.n_changed"] = n_changed
+        numbers["transitions.baseline_to_rag.fixed"] = fixed
+        numbers["transitions.baseline_to_rag.broken"] = broken
+        numbers["transitions.baseline_to_rag.both_wrong"] = both_wrong
+        numbers["transitions.baseline_to_rag.by_direction"] = dict(directions)
+        direction_rows = []
+        for d, n in directions.most_common():
+            direction_rows.append([esc(d.replace("->", " → ")), esc(n)])
+        change_html = ("<h3>Urgency changes from C1 to C2 (primary runs)</h3>"
+                       f"<p>{n_changed} cases changed: {fixed} fixed, {broken} broken, {both_wrong} wrong under both.</p>"
+                       + table(["C1 → C2", "Cases"], direction_rows))
+
+    return ("<h3>Performance set</h3>" + table(["Item", "Value"], data_rows)
+            + "<h3>Safety detail (primary runs)</h3>"
+            + table(["Config", "Red caught", "High-acuity recall", "Balanced accuracy", "Predicted distribution"],
+                    safety_rows)
+            + change_html)
 
 
 def mcnemar_rows(items, flag, thr):
@@ -479,6 +618,25 @@ def section_retrieval():
     else:
         parts.append("<p class='warn'>retrieval_eval.json not found (rate the sheet, then re-run).</p>")
 
+    # corpus composition
+    if CORPUS_FILE.exists():
+        chunks = Counter()
+        words = Counter()
+        with open(CORPUS_FILE, encoding="utf-8") as f:
+            for line in f:
+                c = json.loads(line)
+                chunks[c["doc_id"]] += 1
+                words[c["doc_id"]] += len(c["text"].split())
+        numbers["corpus.n_chunks"] = sum(chunks.values())
+        numbers["corpus.n_words"] = sum(words.values())
+        numbers["corpus.chunks_by_document"] = dict(sorted(chunks.items()))
+        numbers["corpus.words_by_document"] = dict(sorted(words.items()))
+        corpus_rows = []
+        for doc in sorted(chunks):
+            corpus_rows.append([esc(doc), esc(chunks[doc]), esc(f"{words[doc]:,}")])
+        corpus_rows.append(["<b>Total</b>", f"<b>{sum(chunks.values())}</b>", f"<b>{sum(words.values()):,}</b>"])
+        parts.append("<h3>Corpus composition</h3>" + table(["Document", "Chunks", "Words"], corpus_rows))
+
     # C4 fixed context
     fixed = CORPUS_FILE.parent / "fixed_context.json"
     if fixed.exists():
@@ -593,6 +751,7 @@ def main():
     body = ""
     body += section_provenance()
     body += section_headline()
+    body += section_details()
     body += section_mcnemar()
     body += section_rq1_range()
     body += section_sensitivity()
