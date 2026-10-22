@@ -1,0 +1,570 @@
+{
+  "baseline.urgency_exact_acc": "0.540785498489426",
+  "rag.urgency_exact_acc": "0.540785498489426",
+  "rag_masked.urgency_exact_acc": "0.5377643504531722",
+  "rag_fixed.urgency_exact_acc": "0.48036253776435045",
+  "baseline.urgency_adjacent_acc": "0.9879154078549849",
+  "rag.urgency_adjacent_acc": "0.9879154078549849",
+  "rag_masked.urgency_adjacent_acc": "0.9848942598187311",
+  "rag_fixed.urgency_adjacent_acc": "0.9879154078549849",
+  "baseline.over_triage_rate": "0.4078549848942598",
+  "rag.over_triage_rate": "0.3987915407854985",
+  "rag_masked.over_triage_rate": "0.3957703927492447",
+  "rag_fixed.over_triage_rate": "0.4743202416918429",
+  "baseline.under_triage_rate": "0.0513595166163142",
+  "rag.under_triage_rate": "0.06042296072507553",
+  "rag_masked.under_triage_rate": "0.06646525679758308",
+  "rag_fixed.under_triage_rate": "0.045317220543806644",
+  "baseline.specialty_acc": "0.6102719033232629",
+  "rag.specialty_acc": "0.5589123867069486",
+  "rag_masked.specialty_acc": "0.5891238670694864",
+  "rag_fixed.specialty_acc": "0.552870090634441",
+  "baseline.specialty_acc_any_listed": "0.6525679758308157",
+  "rag.specialty_acc_any_listed": "0.5891238670694864",
+  "rag_masked.specialty_acc_any_listed": "0.6193353474320241",
+  "rag_fixed.specialty_acc_any_listed": "0.5800604229607251",
+  "baseline.variants_urgency_dpr": "0.014285714285714235",
+  "rag.variants_urgency_dpr": "0.05714285714285716",
+  "rag_masked.variants_urgency_dpr": "0.02857142857142858",
+  "rag_fixed.variants_urgency_dpr": "",
+  "baseline.urgency_consistency": "0.9571428571428572",
+  "rag.urgency_consistency": "0.8857142857142857",
+  "rag_masked.urgency_consistency": "0.9714285714285714",
+  "rag_fixed.urgency_consistency": "",
+  "baseline.n_cases": "331",
+  "rag.n_cases": "331",
+  "rag_masked.n_cases": "331",
+  "rag_fixed.n_cases": "331",
+  "baseline.n_error": "0",
+  "rag.n_error": "0",
+  "rag_masked.n_error": "0",
+  "rag_fixed.n_error": "0",
+  "baseline.n_invalid_urgency": "0",
+  "rag.n_invalid_urgency": "0",
+  "rag_masked.n_invalid_urgency": "0",
+  "rag_fixed.n_invalid_urgency": "0",
+  "ground_truth_distribution": {
+    "orange": 119,
+    "yellow": 192,
+    "red": 15,
+    "green": 5
+  },
+  "majority_class": "yellow",
+  "majority_class_acc": 0.5800604229607251,
+  "n_comparisons": 12,
+  "bonferroni_alpha": 0.004166666666666667,
+  "mcnemar.baseline_vs_rag.specialty.p": 0.003326892852783203,
+  "mcnemar.baseline_vs_rag_masked.specialty.p": 0.2295229434967041,
+  "mcnemar.baseline_vs_rag_fixed.specialty.p": 0.0005461126565933228,
+  "mcnemar.rag_vs_rag_masked.specialty.p": 0.021270751953125,
+  "mcnemar.rag_vs_rag_fixed.specialty.p": 0.803619384765625,
+  "mcnemar.rag_masked_vs_rag_fixed.specialty.p": 0.022655844688415527,
+  "mcnemar.baseline_vs_rag.urgency.p": 1.0,
+  "mcnemar.baseline_vs_rag_masked.urgency.p": 1.0,
+  "mcnemar.baseline_vs_rag_fixed.urgency.p": 0.0016580525261815637,
+  "mcnemar.rag_vs_rag_masked.urgency.p": 1.0,
+  "mcnemar.rag_vs_rag_fixed.urgency.p": 0.0016580525261815637,
+  "mcnemar.rag_masked_vs_rag_fixed.urgency.p": 0.00432400493446039,
+  "mcnemar.baseline_vs_baseline_rerun.specialty.p": 0.625,
+  "mcnemar.baseline_vs_baseline_rerun.urgency.p": 0.803619384765625,
+  "rq1.baseline_run1_vs_rag.urgency.p": 1.0,
+  "rq1.baseline_run1_vs_rag.urgency.acc_a": 0.540785498489426,
+  "rq1.baseline_rep2_vs_rag.urgency.p": 0.8746293123804207,
+  "rq1.baseline_rep2_vs_rag.urgency.acc_a": 0.5347432024169184,
+  "rq1.baseline_rep3_vs_rag.urgency.p": 0.8776143287523154,
+  "rq1.baseline_rep3_vs_rag.urgency.acc_a": 0.5347432024169184,
+  "rq1.baseline_run1_vs_rag.specialty.p": 0.003326892852783203,
+  "rq1.baseline_run1_vs_rag.specialty.acc_a": 0.6102719033232629,
+  "rq1.baseline_rep2_vs_rag.specialty.p": 0.0013187271542847157,
+  "rq1.baseline_rep2_vs_rag.specialty.acc_a": 0.6163141993957704,
+  "rq1.baseline_rep3_vs_rag.specialty.p": 0.003326892852783203,
+  "rq1.baseline_rep3_vs_rag.specialty.acc_a": 0.6102719033232629,
+  "rq1.baseline_run1_vs_rag_masked.urgency.p": 1.0,
+  "rq1.baseline_run1_vs_rag_masked.urgency.acc_a": 0.540785498489426,
+  "rq1.baseline_rep2_vs_rag_masked.urgency.p": 1.0,
+  "rq1.baseline_rep2_vs_rag_masked.urgency.acc_a": 0.5347432024169184,
+  "rq1.baseline_rep3_vs_rag_masked.urgency.p": 1.0,
+  "rq1.baseline_rep3_vs_rag_masked.urgency.acc_a": 0.5347432024169184,
+  "rq1.baseline_run1_vs_rag_masked.specialty.p": 0.2295229434967041,
+  "rq1.baseline_run1_vs_rag_masked.specialty.acc_a": 0.6102719033232629,
+  "rq1.baseline_rep2_vs_rag_masked.specialty.p": 0.12207812070846558,
+  "rq1.baseline_rep2_vs_rag_masked.specialty.acc_a": 0.6163141993957704,
+  "rq1.baseline_rep3_vs_rag_masked.specialty.p": 0.2295229434967041,
+  "rq1.baseline_rep3_vs_rag_masked.specialty.acc_a": 0.6102719033232629,
+  "rq1.rag.urgency.p_min": 0.8746293123804207,
+  "rq1.rag.urgency.p_max": 1.0,
+  "rq1.rag.specialty.p_min": 0.0013187271542847157,
+  "rq1.rag.specialty.p_max": 0.003326892852783203,
+  "rq1.rag_masked.urgency.p_min": 1.0,
+  "rq1.rag_masked.urgency.p_max": 1.0,
+  "rq1.rag_masked.specialty.p_min": 0.12207812070846558,
+  "rq1.rag_masked.specialty.p_max": 0.2295229434967041,
+  "baseline.specialty_acc_mapped": "0.6253776435045317",
+  "baseline.specialty_acc_any_listed_mapped": "0.6706948640483383",
+  "baseline.specialty_ceiling": "0.9486404833836858",
+  "rag.specialty_acc_mapped": "0.5800604229607251",
+  "rag.specialty_acc_any_listed_mapped": "0.6163141993957704",
+  "rag.specialty_ceiling": "0.9486404833836858",
+  "rag_masked.specialty_acc_mapped": "0.6102719033232629",
+  "rag_masked.specialty_acc_any_listed_mapped": "0.6435045317220544",
+  "rag_masked.specialty_ceiling": "0.9486404833836858",
+  "rag_fixed.specialty_acc_mapped": "0.5740181268882175",
+  "rag_fixed.specialty_acc_any_listed_mapped": "0.6072507552870091",
+  "rag_fixed.specialty_ceiling": "0.9486404833836858",
+  "sensitivity.mcnemar.baseline_vs_rag_fixed.specialty_mapped.p": 0.002315700054168701,
+  "sensitivity.mcnemar.baseline_vs_rag_masked.specialty_mapped.p": 0.42435622215270996,
+  "sensitivity.mcnemar.baseline_vs_rag.specialty_mapped.p": 0.010673840530216694,
+  "sensitivity.mcnemar.rag_masked_vs_rag_fixed.specialty_mapped.p": 0.022655844688415527,
+  "sensitivity.mcnemar.rag_vs_rag_fixed.specialty_mapped.p": 0.803619384765625,
+  "sensitivity.mcnemar.rag_vs_rag_masked.specialty_mapped.p": 0.021270751953125,
+  "noise.baseline.n_runs": 3,
+  "noise.baseline.n_compared": 331,
+  "noise.baseline.urgency_run_agreement": 0.9597180261832831,
+  "noise.baseline.specialty_run_agreement": 0.9838872104733132,
+  "noise.baseline.urgency_all_runs_agree": 0.9395770392749244,
+  "noise.baseline.urgency_agreement_range": {
+    "min": 0.945619335347432,
+    "max": 0.972809667673716,
+    "spread": 0.027190332326283984
+  },
+  "noise.baseline.specialty_agreement_range": {
+    "min": 0.9818731117824774,
+    "max": 0.9848942598187311,
+    "spread": 0.0030211480362537513
+  },
+  "noise.baseline.urgency_exact_acc_range": {
+    "min": 0.5347432024169184,
+    "max": 0.540785498489426,
+    "spread": 0.006042296072507614
+  },
+  "noise.baseline.specialty_acc_range": {
+    "min": 0.6102719033232629,
+    "max": 0.6163141993957704,
+    "spread": 0.0060422960725075026
+  },
+  "noise.baseline_variants.n_runs": 3,
+  "noise.baseline_variants.n_compared": 280,
+  "noise.baseline_variants.urgency_run_agreement": 0.980952380952381,
+  "noise.baseline_variants.specialty_run_agreement": 0.9702380952380952,
+  "noise.baseline_variants.urgency_all_runs_agree": 0.9714285714285714,
+  "noise.baseline_variants.urgency_agreement_range": {
+    "min": 0.975,
+    "max": 0.9857142857142858,
+    "spread": 0.010714285714285787
+  },
+  "noise.baseline_variants.specialty_agreement_range": {
+    "min": 0.9678571428571429,
+    "max": 0.9714285714285714,
+    "spread": 0.0035714285714285587
+  },
+  "noise.baseline_variants.urgency_exact_acc_range": {
+    "min": 0.48214285714285715,
+    "max": 0.48928571428571427,
+    "spread": 0.0071428571428571175
+  },
+  "noise.baseline_variants.specialty_acc_range": {
+    "min": 0.5821428571428572,
+    "max": 0.5892857142857143,
+    "spread": 0.0071428571428571175
+  },
+  "noise.baseline_variants.consistency_range": {
+    "min": 0.9285714285714286,
+    "max": 0.9571428571428572,
+    "spread": 0.02857142857142858
+  },
+  "noise.baseline_variants.dpr_range": {
+    "min": 0.014285714285714235,
+    "max": 0.02857142857142847,
+    "spread": 0.014285714285714235
+  },
+  "noise.baseline_variants.gender_flip_rate_range": {
+    "min": 0.02857142857142857,
+    "max": 0.03571428571428571,
+    "spread": 0.007142857142857142
+  },
+  "noise.baseline_variants.age_flip_rate_range": {
+    "min": 0.02142857142857143,
+    "max": 0.04285714285714286,
+    "spread": 0.02142857142857143
+  },
+  "noise.rag.n_runs": 3,
+  "noise.rag.n_compared": 331,
+  "noise.rag.urgency_run_agreement": 0.9818731117824774,
+  "noise.rag.specialty_run_agreement": 0.973816717019134,
+  "noise.rag.urgency_all_runs_agree": 0.972809667673716,
+  "noise.rag.urgency_agreement_range": {
+    "min": 0.9788519637462235,
+    "max": 0.9848942598187311,
+    "spread": 0.006042296072507614
+  },
+  "noise.rag.specialty_agreement_range": {
+    "min": 0.9667673716012084,
+    "max": 0.9818731117824774,
+    "spread": 0.015105740181268978
+  },
+  "noise.rag.urgency_exact_acc_range": {
+    "min": 0.540785498489426,
+    "max": 0.5498489425981873,
+    "spread": 0.009063444108761254
+  },
+  "noise.rag.specialty_acc_range": {
+    "min": 0.5589123867069486,
+    "max": 0.5770392749244713,
+    "spread": 0.01812688821752262
+  },
+  "noise.rag_variants.n_runs": 3,
+  "noise.rag_variants.n_compared": 280,
+  "noise.rag_variants.urgency_run_agreement": 0.9714285714285714,
+  "noise.rag_variants.specialty_run_agreement": 0.9619047619047619,
+  "noise.rag_variants.urgency_all_runs_agree": 0.9571428571428572,
+  "noise.rag_variants.urgency_agreement_range": {
+    "min": 0.9678571428571429,
+    "max": 0.9785714285714285,
+    "spread": 0.010714285714285676
+  },
+  "noise.rag_variants.specialty_agreement_range": {
+    "min": 0.9535714285714285,
+    "max": 0.9678571428571429,
+    "spread": 0.014285714285714346
+  },
+  "noise.rag_variants.urgency_exact_acc_range": {
+    "min": 0.49642857142857144,
+    "max": 0.5,
+    "spread": 0.0035714285714285587
+  },
+  "noise.rag_variants.specialty_acc_range": {
+    "min": 0.5178571428571429,
+    "max": 0.5214285714285715,
+    "spread": 0.0035714285714285587
+  },
+  "noise.rag_variants.consistency_range": {
+    "min": 0.8428571428571429,
+    "max": 0.8857142857142857,
+    "spread": 0.042857142857142816
+  },
+  "noise.rag_variants.dpr_range": {
+    "min": 0.05714285714285716,
+    "max": 0.12857142857142856,
+    "spread": 0.0714285714285714
+  },
+  "noise.rag_variants.gender_flip_rate_range": {
+    "min": 0.05714285714285714,
+    "max": 0.07142857142857142,
+    "spread": 0.014285714285714284
+  },
+  "noise.rag_variants.age_flip_rate_range": {
+    "min": 0.05714285714285714,
+    "max": 0.09285714285714286,
+    "spread": 0.03571428571428572
+  },
+  "noise.rag_masked.n_runs": 3,
+  "noise.rag_masked.n_compared": 331,
+  "noise.rag_masked.urgency_run_agreement": 0.9798590130916415,
+  "noise.rag_masked.specialty_run_agreement": 0.9788519637462235,
+  "noise.rag_masked.urgency_all_runs_agree": 0.9697885196374623,
+  "noise.rag_masked.urgency_agreement_range": {
+    "min": 0.9758308157099698,
+    "max": 0.9848942598187311,
+    "spread": 0.009063444108761365
+  },
+  "noise.rag_masked.specialty_agreement_range": {
+    "min": 0.972809667673716,
+    "max": 0.9818731117824774,
+    "spread": 0.009063444108761365
+  },
+  "noise.rag_masked.urgency_exact_acc_range": {
+    "min": 0.5377643504531722,
+    "max": 0.540785498489426,
+    "spread": 0.0030211480362538623
+  },
+  "noise.rag_masked.specialty_acc_range": {
+    "min": 0.5830815709969789,
+    "max": 0.5891238670694864,
+    "spread": 0.0060422960725075026
+  },
+  "noise.rag_masked_variants.n_runs": 3,
+  "noise.rag_masked_variants.n_compared": 280,
+  "noise.rag_masked_variants.urgency_run_agreement": 0.9857142857142858,
+  "noise.rag_masked_variants.specialty_run_agreement": 0.9571428571428572,
+  "noise.rag_masked_variants.urgency_all_runs_agree": 0.9785714285714285,
+  "noise.rag_masked_variants.urgency_agreement_range": {
+    "min": 0.9821428571428571,
+    "max": 0.9928571428571429,
+    "spread": 0.010714285714285787
+  },
+  "noise.rag_masked_variants.specialty_agreement_range": {
+    "min": 0.9535714285714285,
+    "max": 0.9607142857142857,
+    "spread": 0.0071428571428572285
+  },
+  "noise.rag_masked_variants.urgency_exact_acc_range": {
+    "min": 0.5071428571428571,
+    "max": 0.5107142857142857,
+    "spread": 0.0035714285714285587
+  },
+  "noise.rag_masked_variants.specialty_acc_range": {
+    "min": 0.5142857142857142,
+    "max": 0.5285714285714286,
+    "spread": 0.014285714285714346
+  },
+  "noise.rag_masked_variants.consistency_range": {
+    "min": 0.9714285714285714,
+    "max": 0.9714285714285714,
+    "spread": 0.0
+  },
+  "noise.rag_masked_variants.dpr_range": {
+    "min": 0.014285714285714346,
+    "max": 0.02857142857142858,
+    "spread": 0.014285714285714235
+  },
+  "noise.rag_masked_variants.gender_flip_rate_range": {
+    "min": 0.014285714285714285,
+    "max": 0.02142857142857143,
+    "spread": 0.0071428571428571435
+  },
+  "noise.rag_masked_variants.age_flip_rate_range": {
+    "min": 0.007142857142857143,
+    "max": 0.02142857142857143,
+    "spread": 0.014285714285714287
+  },
+  "noise.rag_fixed.n_runs": 3,
+  "noise.rag_fixed.n_compared": 331,
+  "noise.rag_fixed.urgency_run_agreement": 0.9879154078549849,
+  "noise.rag_fixed.specialty_run_agreement": 0.9758308157099697,
+  "noise.rag_fixed.urgency_all_runs_agree": 0.9818731117824774,
+  "noise.rag_fixed.urgency_agreement_range": {
+    "min": 0.9848942598187311,
+    "max": 0.9909365558912386,
+    "spread": 0.0060422960725075026
+  },
+  "noise.rag_fixed.specialty_agreement_range": {
+    "min": 0.9697885196374623,
+    "max": 0.9788519637462235,
+    "spread": 0.009063444108761254
+  },
+  "noise.rag_fixed.urgency_exact_acc_range": {
+    "min": 0.4773413897280967,
+    "max": 0.48036253776435045,
+    "spread": 0.0030211480362537513
+  },
+  "noise.rag_fixed.specialty_acc_range": {
+    "min": 0.5438066465256798,
+    "max": 0.552870090634441,
+    "spread": 0.009063444108761254
+  },
+  "fairness.baseline.dpr": 0.014285714285714235,
+  "fairness.baseline.eod": 0.025000000000000022,
+  "fairness.baseline.tpr_gap": 0.0,
+  "fairness.baseline.fpr_gap": 0.025000000000000022,
+  "fairness.baseline.consistency": 0.9571428571428572,
+  "fairness.baseline.gender_flip_rate": 0.03571428571428571,
+  "fairness.baseline.age_flip_rate": 0.02142857142857143,
+  "fairness.baseline.noise_rate": 0.017857142857142856,
+  "fairness.baseline.fisher_gender_p": 0.3118957075669652,
+  "fairness.baseline.fisher_age_p": 1.0,
+  "fairness.baseline.high_rate_by_group": {
+    "young_male": 0.8285714285714286,
+    "young_female": 0.8428571428571429,
+    "old_male": 0.8285714285714286,
+    "old_female": 0.8428571428571429
+  },
+  "fairness.baseline.n_by_group": {
+    "young_male": 70,
+    "young_female": 70,
+    "old_male": 70,
+    "old_female": 70
+  },
+  "fairness.baseline.gender_main_effect.p_value": 0.5,
+  "fairness.baseline.gender_main_effect.verdict": "not significant",
+  "fairness.baseline.gender_main_effect.rate_difference": 0.014285714285714285,
+  "fairness.baseline.gender_main_effect.alpha": 0.008333333333333333,
+  "fairness.baseline.gender_main_effect.run1.only_female_high": 2,
+  "fairness.baseline.gender_main_effect.run1.only_male_high": 0,
+  "fairness.baseline.gender_main_effect.rep2.only_female_high": 1,
+  "fairness.baseline.gender_main_effect.rep2.only_male_high": 1,
+  "fairness.baseline.gender_main_effect.rep3.only_female_high": 1,
+  "fairness.baseline.gender_main_effect.rep3.only_male_high": 2,
+  "fairness.baseline.age_main_effect.p_value": 1.0,
+  "fairness.baseline.age_main_effect.verdict": "not significant",
+  "fairness.baseline.age_main_effect.rate_difference": 0.0,
+  "fairness.baseline.age_main_effect.alpha": 0.008333333333333333,
+  "fairness.baseline.age_main_effect.run1.only_old_high": 0,
+  "fairness.baseline.age_main_effect.run1.only_young_high": 0,
+  "fairness.baseline.age_main_effect.rep2.only_old_high": 0,
+  "fairness.baseline.age_main_effect.rep2.only_young_high": 2,
+  "fairness.baseline.age_main_effect.rep3.only_old_high": 2,
+  "fairness.baseline.age_main_effect.rep3.only_young_high": 1,
+  "fairness.baseline.group_pair.young_male_vs_young_female.p": 1.0,
+  "fairness.baseline.group_pair.young_male_vs_old_male.p": 1.0,
+  "fairness.baseline.group_pair.young_male_vs_old_female.p": 1.0,
+  "fairness.baseline.group_pair.young_female_vs_old_male.p": 1.0,
+  "fairness.baseline.group_pair.young_female_vs_old_female.p": 1.0,
+  "fairness.baseline.group_pair.old_male_vs_old_female.p": 1.0,
+  "fairness.rag.dpr": 0.05714285714285716,
+  "fairness.rag.eod": 0.09999999999999998,
+  "fairness.rag.tpr_gap": 0.0,
+  "fairness.rag.fpr_gap": 0.09999999999999998,
+  "fairness.rag.consistency": 0.8857142857142857,
+  "fairness.rag.gender_flip_rate": 0.05714285714285714,
+  "fairness.rag.age_flip_rate": 0.05714285714285714,
+  "fairness.rag.noise_rate": 0.02142857142857143,
+  "fairness.rag.fisher_gender_p": 0.0800950048098148,
+  "fairness.rag.fisher_age_p": 0.0800950048098148,
+  "fairness.rag.high_rate_by_group": {
+    "young_male": 0.7714285714285715,
+    "young_female": 0.7714285714285715,
+    "old_male": 0.8285714285714286,
+    "old_female": 0.8285714285714286
+  },
+  "fairness.rag.n_by_group": {
+    "young_male": 70,
+    "young_female": 70,
+    "old_male": 70,
+    "old_female": 70
+  },
+  "fairness.rag.gender_main_effect.p_value": 1.0,
+  "fairness.rag.gender_main_effect.verdict": "not significant",
+  "fairness.rag.gender_main_effect.rate_difference": 0.0,
+  "fairness.rag.gender_main_effect.alpha": 0.008333333333333333,
+  "fairness.rag.gender_main_effect.run1.only_female_high": 4,
+  "fairness.rag.gender_main_effect.run1.only_male_high": 4,
+  "fairness.rag.gender_main_effect.rep2.only_female_high": 7,
+  "fairness.rag.gender_main_effect.rep2.only_male_high": 3,
+  "fairness.rag.gender_main_effect.rep3.only_female_high": 7,
+  "fairness.rag.gender_main_effect.rep3.only_male_high": 1,
+  "fairness.rag.age_main_effect.p_value": 0.0078125,
+  "fairness.rag.age_main_effect.verdict": "claimed",
+  "fairness.rag.age_main_effect.rate_difference": 0.05714285714285714,
+  "fairness.rag.age_main_effect.alpha": 0.008333333333333333,
+  "fairness.rag.age_main_effect.run1.only_old_high": 8,
+  "fairness.rag.age_main_effect.run1.only_young_high": 0,
+  "fairness.rag.age_main_effect.rep2.only_old_high": 8,
+  "fairness.rag.age_main_effect.rep2.only_young_high": 0,
+  "fairness.rag.age_main_effect.rep3.only_old_high": 12,
+  "fairness.rag.age_main_effect.rep3.only_young_high": 0,
+  "fairness.rag.group_pair.young_male_vs_young_female.p": 1.0,
+  "fairness.rag.group_pair.young_male_vs_old_male.p": 0.125,
+  "fairness.rag.group_pair.young_male_vs_old_female.p": 0.21875,
+  "fairness.rag.group_pair.young_female_vs_old_male.p": 0.21875,
+  "fairness.rag.group_pair.young_female_vs_old_female.p": 0.125,
+  "fairness.rag.group_pair.old_male_vs_old_female.p": 1.0,
+  "fairness.rag_masked.dpr": 0.02857142857142858,
+  "fairness.rag_masked.eod": 0.04999999999999993,
+  "fairness.rag_masked.tpr_gap": 0.0,
+  "fairness.rag_masked.fpr_gap": 0.04999999999999993,
+  "fairness.rag_masked.consistency": 0.9714285714285714,
+  "fairness.rag_masked.gender_flip_rate": 0.02142857142857143,
+  "fairness.rag_masked.age_flip_rate": 0.02142857142857143,
+  "fairness.rag_masked.noise_rate": 0.007142857142857143,
+  "fairness.rag_masked.fisher_gender_p": 0.33880574268088404,
+  "fairness.rag_masked.fisher_age_p": 0.33880574268088404,
+  "fairness.rag_masked.high_rate_by_group": {
+    "young_male": 0.7714285714285715,
+    "young_female": 0.8,
+    "old_male": 0.8,
+    "old_female": 0.7857142857142857
+  },
+  "fairness.rag_masked.n_by_group": {
+    "young_male": 70,
+    "young_female": 70,
+    "old_male": 70,
+    "old_female": 70
+  },
+  "fairness.rag_masked.gender_main_effect.p_value": 1.0,
+  "fairness.rag_masked.gender_main_effect.verdict": "not significant",
+  "fairness.rag_masked.gender_main_effect.rate_difference": 0.007142857142857143,
+  "fairness.rag_masked.gender_main_effect.alpha": 0.008333333333333333,
+  "fairness.rag_masked.gender_main_effect.run1.only_female_high": 2,
+  "fairness.rag_masked.gender_main_effect.run1.only_male_high": 1,
+  "fairness.rag_masked.gender_main_effect.rep2.only_female_high": 1,
+  "fairness.rag_masked.gender_main_effect.rep2.only_male_high": 2,
+  "fairness.rag_masked.gender_main_effect.rep3.only_female_high": 2,
+  "fairness.rag_masked.gender_main_effect.rep3.only_male_high": 0,
+  "fairness.rag_masked.age_main_effect.p_value": 1.0,
+  "fairness.rag_masked.age_main_effect.verdict": "not significant",
+  "fairness.rag_masked.age_main_effect.rate_difference": 0.007142857142857143,
+  "fairness.rag_masked.age_main_effect.alpha": 0.008333333333333333,
+  "fairness.rag_masked.age_main_effect.run1.only_old_high": 2,
+  "fairness.rag_masked.age_main_effect.run1.only_young_high": 1,
+  "fairness.rag_masked.age_main_effect.rep2.only_old_high": 1,
+  "fairness.rag_masked.age_main_effect.rep2.only_young_high": 0,
+  "fairness.rag_masked.age_main_effect.rep3.only_old_high": 1,
+  "fairness.rag_masked.age_main_effect.rep3.only_young_high": 1,
+  "fairness.rag_masked.group_pair.young_male_vs_young_female.p": 0.5,
+  "fairness.rag_masked.group_pair.young_male_vs_old_male.p": 0.5,
+  "fairness.rag_masked.group_pair.young_male_vs_old_female.p": 1.0,
+  "fairness.rag_masked.group_pair.young_female_vs_old_male.p": 1.0,
+  "fairness.rag_masked.group_pair.young_female_vs_old_female.p": 1.0,
+  "fairness.rag_masked.group_pair.old_male_vs_old_female.p": 1.0,
+  "fairness.main_effect_alpha": 0.008333333333333333,
+  "fairness.group_pairs_alpha": 0.008333333333333333,
+  "retrieval.n_cases": 25,
+  "retrieval.n_judgments": 75,
+  "retrieval.n_relevant": 31,
+  "retrieval.p_at_3": 0.4133333333333333,
+  "retrieval.mrr": 0.7333333333333333,
+  "retrieval.ndcg_at_3": 0.7617896355549323,
+  "retrieval.precision_by_rank": {
+    "1": 0.6,
+    "2": 0.48,
+    "3": 0.16
+  },
+  "retrieval.cases_with_no_relevant": 3,
+  "retrieval.n_cases_rated": 25,
+  "retrieval.precision_at_k": 0.4133333333333333,
+  "retrieval.ndcg_at_k": 0.7617896355549323,
+  "retrieval.sheet": "results/retrieval_rating_sheet_v2_rated.csv",
+  "c4.chunk_ids": [
+    "06_ctas_participant_manual_023",
+    "07_esi_handbook_v5_039",
+    "06_ctas_participant_manual_019"
+  ],
+  "c4.n_queries": 1222,
+  "retrieval_stats.C2_performance.n_queries": 331,
+  "retrieval_stats.C2_performance.distinct_chunks": 66,
+  "retrieval_stats.C2_performance.distinct_chunks_rank1": 43,
+  "retrieval_stats.C2_performance.mean_top1_similarity": 0.48586742890565415,
+  "retrieval_stats.C2_performance.share_by_document": {
+    "06_ctas_participant_manual": 0.6344410876132931,
+    "07_esi_handbook_v5": 0.364551863041289,
+    "05_mts_overview": 0.0010070493454179255
+  },
+  "retrieval_stats.C3_performance.n_queries": 331,
+  "retrieval_stats.C3_performance.distinct_chunks": 69,
+  "retrieval_stats.C3_performance.distinct_chunks_rank1": 39,
+  "retrieval_stats.C3_performance.mean_top1_similarity": 0.4993097917190851,
+  "retrieval_stats.C3_performance.share_by_document": {
+    "06_ctas_participant_manual": 0.6455186304128903,
+    "07_esi_handbook_v5": 0.35347432024169184,
+    "05_mts_overview": 0.0010070493454179255
+  },
+  "retrieval_stats.C2_variants.n_queries": 280,
+  "retrieval_stats.C2_variants.distinct_chunks": 50,
+  "retrieval_stats.C2_variants.distinct_chunks_rank1": 26,
+  "retrieval_stats.C2_variants.mean_top1_similarity": 0.48845230798636163,
+  "retrieval_stats.C2_variants.share_by_document": {
+    "06_ctas_participant_manual": 0.6357142857142857,
+    "07_esi_handbook_v5": 0.36428571428571427
+  },
+  "retrieval_stats.C3_variants.n_queries": 280,
+  "retrieval_stats.C3_variants.distinct_chunks": 41,
+  "retrieval_stats.C3_variants.distinct_chunks_rank1": 20,
+  "retrieval_stats.C3_variants.mean_top1_similarity": 0.5062080085277557,
+  "retrieval_stats.C3_variants.share_by_document": {
+    "06_ctas_participant_manual": 0.6333333333333333,
+    "07_esi_handbook_v5": 0.36666666666666664
+  },
+  "c4.overlap_with_c2.cases_by_overlap": {
+    "0": 88,
+    "1": 189,
+    "2": 53,
+    "3": 1
+  },
+  "c4.overlap_with_c2.mean": 0.9003021148036254,
+  "error_cases_by_type": {
+    "worsened": 20,
+    "safety_downgrade": 20,
+    "improved": 20,
+    "demographic_flip": 8
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "metric": "urgency",
+  "mapped": false,
+  "n_paired": 331,
+  "acc_a": 0.5377643504531722,
+  "acc_b": 0.48036253776435045,
+  "both_correct": 148,
+  "neither_correct": 142,
+  "only_a_correct": 30,
+  "only_b_correct": 11,
+  "p_value": 0.00432400493446039,
+  "file_a": "rag_masked_predictions.csv",
+  "file_b": "rag_fixed_predictions.csv"
+}

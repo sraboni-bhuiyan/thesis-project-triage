@@ -1,0 +1,115 @@
+{
+  "set": "variants",
+  "runs": [
+    "run1",
+    "rep2",
+    "rep3"
+  ],
+  "n_runs": 3,
+  "n_compared": 280,
+  "pairs": {
+    "run1_vs_rep2": {
+      "n": 280,
+      "urgency_disagree": 6,
+      "urgency_agreement": 0.9785714285714285,
+      "specialty_disagree": 9,
+      "specialty_agreement": 0.9678571428571429
+    },
+    "run1_vs_rep3": {
+      "n": 280,
+      "urgency_disagree": 9,
+      "urgency_agreement": 0.9678571428571429,
+      "specialty_disagree": 13,
+      "specialty_agreement": 0.9535714285714285
+    },
+    "rep2_vs_rep3": {
+      "n": 280,
+      "urgency_disagree": 9,
+      "urgency_agreement": 0.9678571428571429,
+      "specialty_disagree": 10,
+      "specialty_agreement": 0.9642857142857143
+    }
+  },
+  "urgency_run_agreement": 0.9714285714285714,
+  "specialty_run_agreement": 0.9619047619047619,
+  "urgency_agreement_range": {
+    "min": 0.9678571428571429,
+    "max": 0.9785714285714285,
+    "spread": 0.010714285714285676
+  },
+  "specialty_agreement_range": {
+    "min": 0.9535714285714285,
+    "max": 0.9678571428571429,
+    "spread": 0.014285714285714346
+  },
+  "urgency_all_runs_agree": 0.9571428571428572,
+  "urgency_disagree_pooled": 24,
+  "n_comparisons_pooled": 840,
+  "per_run": {
+    "run1": {
+      "urgency_exact_acc": 0.5,
+      "specialty_acc": 0.5178571428571429,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.8857142857142857,
+      "dpr": 0.05714285714285716,
+      "gender_flip_rate": 0.05714285714285714,
+      "age_flip_rate": 0.05714285714285714
+    },
+    "rep2": {
+      "urgency_exact_acc": 0.5,
+      "specialty_acc": 0.5214285714285715,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.8714285714285714,
+      "dpr": 0.08571428571428574,
+      "gender_flip_rate": 0.07142857142857142,
+      "age_flip_rate": 0.05714285714285714
+    },
+    "rep3": {
+      "urgency_exact_acc": 0.49642857142857144,
+      "specialty_acc": 0.5214285714285715,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.8428571428571429,
+      "dpr": 0.12857142857142856,
+      "gender_flip_rate": 0.06428571428571428,
+      "age_flip_rate": 0.09285714285714286
+    }
+  },
+  "urgency_exact_acc_range": {
+    "min": 0.49642857142857144,
+    "max": 0.5,
+    "spread": 0.0035714285714285587
+  },
+  "specialty_acc_range": {
+    "min": 0.5178571428571429,
+    "max": 0.5214285714285715,
+    "spread": 0.0035714285714285587
+  },
+  "consistency_range": {
+    "min": 0.8428571428571429,
+    "max": 0.8857142857142857,
+    "spread": 0.042857142857142816
+  },
+  "dpr_range": {
+    "min": 0.05714285714285716,
+    "max": 0.12857142857142856,
+    "spread": 0.0714285714285714
+  },
+  "gender_flip_rate_range": {
+    "min": 0.05714285714285714,
+    "max": 0.07142857142857142,
+    "spread": 0.014285714285714284
+  },
+  "age_flip_rate_range": {
+    "min": 0.05714285714285714,
+    "max": 0.09285714285714286,
+    "spread": 0.03571428571428572
+  },
+  "files": [
+    "rag_variants_predictions.csv",
+    "rag_variants_predictions_rep2.csv",
+    "rag_variants_predictions_rep3.csv"
+  ]
+}

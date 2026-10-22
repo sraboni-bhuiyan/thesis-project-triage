@@ -1,0 +1,597 @@
+{
+  "majority_reference": {
+    "label": "yellow",
+    "acc": 0.5800604229607251,
+    "distribution": {
+      "orange": 119,
+      "yellow": 192,
+      "red": 15,
+      "green": 5
+    }
+  },
+  "configs": {
+    "baseline": {
+      "files": [
+        "baseline_predictions.csv",
+        "baseline_predictions_rep2.csv",
+        "baseline_predictions_rep3.csv"
+      ],
+      "metrics": {
+        "n_cases": 331,
+        "n_error": 0,
+        "n_answered": 331,
+        "n_invalid_urgency": 0,
+        "urgency_exact_acc": 0.540785498489426,
+        "urgency_adjacent_acc": 0.9879154078549849,
+        "over_triage_rate": 0.4078549848942598,
+        "under_triage_rate": 0.0513595166163142,
+        "urgency_balanced_acc": 0.39616158963585435,
+        "urgency_recall_by_class": {
+          "orange": 0.907563025210084,
+          "yellow": 0.34375,
+          "red": 0.3333333333333333,
+          "green": 0.0
+        },
+        "n_by_true_class": {
+          "orange": 119,
+          "yellow": 192,
+          "red": 15,
+          "green": 5
+        },
+        "red_recall": 0.3333333333333333,
+        "n_red": 15,
+        "specialty_acc": 0.6102719033232629,
+        "specialty_acc_any_listed": 0.6525679758308157,
+        "specialty_ceiling": 0.9486404833836858,
+        "specialty_acc_mapped": 0.6253776435045317,
+        "specialty_acc_any_listed_mapped": 0.6706948640483383,
+        "n_invalid_specialty": 0
+      },
+      "urgency_exact_acc_by_run": [
+        0.540785498489426,
+        0.5347432024169184,
+        0.5347432024169184
+      ],
+      "specialty_acc_by_run": [
+        0.6102719033232629,
+        0.6163141993957704,
+        0.6102719033232629
+      ],
+      "performance_dpr": {
+        "dpr": 0.18996027446731667,
+        "high_rate_by_group": {
+          "young_male": 0.7333333333333333,
+          "young_female": 0.6410256410256411,
+          "old_male": 0.82,
+          "old_female": 0.8309859154929577
+        },
+        "n_by_group": {
+          "young_male": 45,
+          "young_female": 39,
+          "old_male": 50,
+          "old_female": 71
+        }
+      },
+      "performance_eod": {
+        "tpr_gap": 0.25,
+        "fpr_gap": 0.10185185185185186,
+        "eod": 0.25,
+        "tpr_by_group": {
+          "young_male": 0.9444444444444444,
+          "young_female": 0.75,
+          "old_male": 1.0,
+          "old_female": 0.9714285714285714
+        },
+        "fpr_by_group": {
+          "young_male": 0.5925925925925926,
+          "young_female": 0.6129032258064516,
+          "old_male": 0.6086956521739131,
+          "old_female": 0.6944444444444444
+        },
+        "n_pos_by_group": {
+          "young_male": 18,
+          "young_female": 8,
+          "old_male": 27,
+          "old_female": 35
+        },
+        "n_neg_by_group": {
+          "young_male": 27,
+          "young_female": 31,
+          "old_male": 23,
+          "old_female": 36
+        }
+      },
+      "pred_distribution": {
+        "orange": 246,
+        "yellow": 75,
+        "red": 10
+      },
+      "variant_files": [
+        "baseline_variants_predictions.csv",
+        "baseline_variants_predictions_rep2.csv",
+        "baseline_variants_predictions_rep3.csv"
+      ],
+      "variants_dpr": {
+        "dpr": 0.014285714285714235,
+        "high_rate_by_group": {
+          "young_male": 0.8285714285714286,
+          "young_female": 0.8428571428571429,
+          "old_male": 0.8285714285714286,
+          "old_female": 0.8428571428571429
+        },
+        "n_by_group": {
+          "young_male": 70,
+          "young_female": 70,
+          "old_male": 70,
+          "old_female": 70
+        }
+      },
+      "variants_eod": {
+        "tpr_gap": 0.0,
+        "fpr_gap": 0.025000000000000022,
+        "eod": 0.025000000000000022,
+        "tpr_by_group": {
+          "young_male": 0.9666666666666667,
+          "young_female": 0.9666666666666667,
+          "old_male": 0.9666666666666667,
+          "old_female": 0.9666666666666667
+        },
+        "fpr_by_group": {
+          "young_male": 0.725,
+          "young_female": 0.75,
+          "old_male": 0.725,
+          "old_female": 0.75
+        },
+        "n_pos_by_group": {
+          "young_male": 30,
+          "young_female": 30,
+          "old_male": 30,
+          "old_female": 30
+        },
+        "n_neg_by_group": {
+          "young_male": 40,
+          "young_female": 40,
+          "old_male": 40,
+          "old_female": 40
+        }
+      },
+      "consistency": {
+        "consistency": 0.9571428571428572,
+        "n_consistent": 67,
+        "n_base_cases": 70
+      },
+      "gender_flip": {
+        "rate": 0.03571428571428571,
+        "flips": 5,
+        "n_pairs": 140
+      },
+      "age_flip": {
+        "rate": 0.02142857142857143,
+        "flips": 3,
+        "n_pairs": 140
+      }
+    },
+    "rag": {
+      "files": [
+        "rag_predictions.csv",
+        "rag_predictions_rep2.csv",
+        "rag_predictions_rep3.csv"
+      ],
+      "metrics": {
+        "n_cases": 331,
+        "n_error": 0,
+        "n_answered": 331,
+        "n_invalid_urgency": 0,
+        "urgency_exact_acc": 0.540785498489426,
+        "urgency_adjacent_acc": 0.9879154078549849,
+        "over_triage_rate": 0.3987915407854985,
+        "under_triage_rate": 0.06042296072507553,
+        "urgency_balanced_acc": 0.35166535364145657,
+        "urgency_recall_by_class": {
+          "orange": 0.9243697478991597,
+          "yellow": 0.3489583333333333,
+          "red": 0.13333333333333333,
+          "green": 0.0
+        },
+        "n_by_true_class": {
+          "orange": 119,
+          "yellow": 192,
+          "red": 15,
+          "green": 5
+        },
+        "red_recall": 0.13333333333333333,
+        "n_red": 15,
+        "specialty_acc": 0.5589123867069486,
+        "specialty_acc_any_listed": 0.5891238670694864,
+        "specialty_ceiling": 0.9486404833836858,
+        "specialty_acc_mapped": 0.5800604229607251,
+        "specialty_acc_any_listed_mapped": 0.6163141993957704,
+        "n_invalid_specialty": 0
+      },
+      "urgency_exact_acc_by_run": [
+        0.540785498489426,
+        0.5498489425981873,
+        0.5438066465256798
+      ],
+      "specialty_acc_by_run": [
+        0.5589123867069486,
+        0.5709969788519638,
+        0.5770392749244713
+      ],
+      "performance_dpr": {
+        "dpr": 0.18996027446731667,
+        "high_rate_by_group": {
+          "young_male": 0.7333333333333333,
+          "young_female": 0.6410256410256411,
+          "old_male": 0.74,
+          "old_female": 0.8309859154929577
+        },
+        "n_by_group": {
+          "young_male": 45,
+          "young_female": 39,
+          "old_male": 50,
+          "old_female": 71
+        }
+      },
+      "performance_eod": {
+        "tpr_gap": 0.25,
+        "fpr_gap": 0.21618357487922701,
+        "eod": 0.25,
+        "tpr_by_group": {
+          "young_male": 1.0,
+          "young_female": 0.75,
+          "old_male": 0.9629629629629629,
+          "old_female": 0.9714285714285714
+        },
+        "fpr_by_group": {
+          "young_male": 0.5555555555555556,
+          "young_female": 0.6129032258064516,
+          "old_male": 0.4782608695652174,
+          "old_female": 0.6944444444444444
+        },
+        "n_pos_by_group": {
+          "young_male": 18,
+          "young_female": 8,
+          "old_male": 27,
+          "old_female": 35
+        },
+        "n_neg_by_group": {
+          "young_male": 27,
+          "young_female": 31,
+          "old_male": 23,
+          "old_female": 36
+        }
+      },
+      "pred_distribution": {
+        "orange": 250,
+        "yellow": 77,
+        "red": 4
+      },
+      "variant_files": [
+        "rag_variants_predictions.csv",
+        "rag_variants_predictions_rep2.csv",
+        "rag_variants_predictions_rep3.csv"
+      ],
+      "variants_dpr": {
+        "dpr": 0.05714285714285716,
+        "high_rate_by_group": {
+          "young_male": 0.7714285714285715,
+          "young_female": 0.7714285714285715,
+          "old_male": 0.8285714285714286,
+          "old_female": 0.8285714285714286
+        },
+        "n_by_group": {
+          "young_male": 70,
+          "young_female": 70,
+          "old_male": 70,
+          "old_female": 70
+        }
+      },
+      "variants_eod": {
+        "tpr_gap": 0.0,
+        "fpr_gap": 0.09999999999999998,
+        "eod": 0.09999999999999998,
+        "tpr_by_group": {
+          "young_male": 0.9333333333333333,
+          "young_female": 0.9333333333333333,
+          "old_male": 0.9333333333333333,
+          "old_female": 0.9333333333333333
+        },
+        "fpr_by_group": {
+          "young_male": 0.65,
+          "young_female": 0.65,
+          "old_male": 0.75,
+          "old_female": 0.75
+        },
+        "n_pos_by_group": {
+          "young_male": 30,
+          "young_female": 30,
+          "old_male": 30,
+          "old_female": 30
+        },
+        "n_neg_by_group": {
+          "young_male": 40,
+          "young_female": 40,
+          "old_male": 40,
+          "old_female": 40
+        }
+      },
+      "consistency": {
+        "consistency": 0.8857142857142857,
+        "n_consistent": 62,
+        "n_base_cases": 70
+      },
+      "gender_flip": {
+        "rate": 0.05714285714285714,
+        "flips": 8,
+        "n_pairs": 140
+      },
+      "age_flip": {
+        "rate": 0.05714285714285714,
+        "flips": 8,
+        "n_pairs": 140
+      }
+    },
+    "rag_masked": {
+      "files": [
+        "rag_masked_predictions.csv",
+        "rag_masked_predictions_rep2.csv",
+        "rag_masked_predictions_rep3.csv"
+      ],
+      "metrics": {
+        "n_cases": 331,
+        "n_error": 0,
+        "n_answered": 331,
+        "n_invalid_urgency": 0,
+        "urgency_exact_acc": 0.5377643504531722,
+        "urgency_adjacent_acc": 0.9848942598187311,
+        "over_triage_rate": 0.3957703927492447,
+        "under_triage_rate": 0.06646525679758308,
+        "urgency_balanced_acc": 0.36253282563025213,
+        "urgency_recall_by_class": {
+          "orange": 0.8907563025210085,
+          "yellow": 0.359375,
+          "red": 0.2,
+          "green": 0.0
+        },
+        "n_by_true_class": {
+          "orange": 119,
+          "yellow": 192,
+          "red": 15,
+          "green": 5
+        },
+        "red_recall": 0.2,
+        "n_red": 15,
+        "specialty_acc": 0.5891238670694864,
+        "specialty_acc_any_listed": 0.6193353474320241,
+        "specialty_ceiling": 0.9486404833836858,
+        "specialty_acc_mapped": 0.6102719033232629,
+        "specialty_acc_any_listed_mapped": 0.6435045317220544,
+        "n_invalid_specialty": 0
+      },
+      "urgency_exact_acc_by_run": [
+        0.5377643504531722,
+        0.540785498489426,
+        0.5377643504531722
+      ],
+      "specialty_acc_by_run": [
+        0.5891238670694864,
+        0.5830815709969789,
+        0.5891238670694864
+      ],
+      "performance_dpr": {
+        "dpr": 0.107981220657277,
+        "high_rate_by_group": {
+          "young_male": 0.7555555555555555,
+          "young_female": 0.6666666666666666,
+          "old_male": 0.72,
+          "old_female": 0.7746478873239436
+        },
+        "n_by_group": {
+          "young_male": 45,
+          "young_female": 39,
+          "old_male": 50,
+          "old_female": 71
+        }
+      },
+      "performance_eod": {
+        "tpr_gap": 0.25,
+        "fpr_gap": 0.21037868162692847,
+        "eod": 0.25,
+        "tpr_by_group": {
+          "young_male": 1.0,
+          "young_female": 0.75,
+          "old_male": 0.9629629629629629,
+          "old_female": 0.9428571428571428
+        },
+        "fpr_by_group": {
+          "young_male": 0.5925925925925926,
+          "young_female": 0.6451612903225806,
+          "old_male": 0.43478260869565216,
+          "old_female": 0.6111111111111112
+        },
+        "n_pos_by_group": {
+          "young_male": 18,
+          "young_female": 8,
+          "old_male": 27,
+          "old_female": 35
+        },
+        "n_neg_by_group": {
+          "young_male": 27,
+          "young_female": 31,
+          "old_male": 23,
+          "old_female": 36
+        }
+      },
+      "pred_distribution": {
+        "orange": 240,
+        "yellow": 81,
+        "red": 8,
+        "green": 2
+      },
+      "variant_files": [
+        "rag_masked_variants_predictions.csv",
+        "rag_masked_variants_predictions_rep2.csv",
+        "rag_masked_variants_predictions_rep3.csv"
+      ],
+      "variants_dpr": {
+        "dpr": 0.02857142857142858,
+        "high_rate_by_group": {
+          "young_male": 0.7714285714285715,
+          "young_female": 0.8,
+          "old_male": 0.8,
+          "old_female": 0.7857142857142857
+        },
+        "n_by_group": {
+          "young_male": 70,
+          "young_female": 70,
+          "old_male": 70,
+          "old_female": 70
+        }
+      },
+      "variants_eod": {
+        "tpr_gap": 0.0,
+        "fpr_gap": 0.04999999999999993,
+        "eod": 0.04999999999999993,
+        "tpr_by_group": {
+          "young_male": 0.9333333333333333,
+          "young_female": 0.9333333333333333,
+          "old_male": 0.9333333333333333,
+          "old_female": 0.9333333333333333
+        },
+        "fpr_by_group": {
+          "young_male": 0.65,
+          "young_female": 0.7,
+          "old_male": 0.7,
+          "old_female": 0.675
+        },
+        "n_pos_by_group": {
+          "young_male": 30,
+          "young_female": 30,
+          "old_male": 30,
+          "old_female": 30
+        },
+        "n_neg_by_group": {
+          "young_male": 40,
+          "young_female": 40,
+          "old_male": 40,
+          "old_female": 40
+        }
+      },
+      "consistency": {
+        "consistency": 0.9714285714285714,
+        "n_consistent": 68,
+        "n_base_cases": 70
+      },
+      "gender_flip": {
+        "rate": 0.02142857142857143,
+        "flips": 3,
+        "n_pairs": 140
+      },
+      "age_flip": {
+        "rate": 0.02142857142857143,
+        "flips": 3,
+        "n_pairs": 140
+      }
+    },
+    "rag_fixed": {
+      "files": [
+        "rag_fixed_predictions.csv",
+        "rag_fixed_predictions_rep2.csv",
+        "rag_fixed_predictions_rep3.csv"
+      ],
+      "metrics": {
+        "n_cases": 331,
+        "n_error": 0,
+        "n_answered": 331,
+        "n_invalid_urgency": 0,
+        "urgency_exact_acc": 0.48036253776435045,
+        "urgency_adjacent_acc": 0.9879154078549849,
+        "over_triage_rate": 0.4743202416918429,
+        "under_triage_rate": 0.045317220543806644,
+        "urgency_balanced_acc": 0.32961747198879554,
+        "urgency_recall_by_class": {
+          "orange": 0.9663865546218487,
+          "yellow": 0.21875,
+          "red": 0.13333333333333333,
+          "green": 0.0
+        },
+        "n_by_true_class": {
+          "orange": 119,
+          "yellow": 192,
+          "red": 15,
+          "green": 5
+        },
+        "red_recall": 0.13333333333333333,
+        "n_red": 15,
+        "specialty_acc": 0.552870090634441,
+        "specialty_acc_any_listed": 0.5800604229607251,
+        "specialty_ceiling": 0.9486404833836858,
+        "specialty_acc_mapped": 0.5740181268882175,
+        "specialty_acc_any_listed_mapped": 0.6072507552870091,
+        "n_invalid_specialty": 0
+      },
+      "urgency_exact_acc_by_run": [
+        0.48036253776435045,
+        0.48036253776435045,
+        0.4773413897280967
+      ],
+      "specialty_acc_by_run": [
+        0.552870090634441,
+        0.5498489425981873,
+        0.5438066465256798
+      ],
+      "performance_dpr": {
+        "dpr": 0.18598772119898876,
+        "high_rate_by_group": {
+          "young_male": 0.8,
+          "young_female": 0.7435897435897436,
+          "old_male": 0.92,
+          "old_female": 0.9295774647887324
+        },
+        "n_by_group": {
+          "young_male": 45,
+          "young_female": 39,
+          "old_male": 50,
+          "old_female": 71
+        }
+      },
+      "performance_eod": {
+        "tpr_gap": 0.125,
+        "fpr_gap": 0.19444444444444453,
+        "eod": 0.19444444444444453,
+        "tpr_by_group": {
+          "young_male": 1.0,
+          "young_female": 0.875,
+          "old_male": 1.0,
+          "old_female": 1.0
+        },
+        "fpr_by_group": {
+          "young_male": 0.6666666666666666,
+          "young_female": 0.7096774193548387,
+          "old_male": 0.8260869565217391,
+          "old_female": 0.8611111111111112
+        },
+        "n_pos_by_group": {
+          "young_male": 18,
+          "young_female": 8,
+          "old_male": 27,
+          "old_female": 35
+        },
+        "n_neg_by_group": {
+          "young_male": 27,
+          "young_female": 31,
+          "old_male": 23,
+          "old_female": 36
+        }
+      },
+      "pred_distribution": {
+        "orange": 281,
+        "yellow": 45,
+        "red": 4,
+        "green": 1
+      }
+    }
+  },
+  "model_config": "nvidia/nemotron-3-ultra-550b-a55b"
+}

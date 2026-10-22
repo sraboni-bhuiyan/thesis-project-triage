@@ -1,0 +1,83 @@
+{
+  "set": "performance",
+  "runs": [
+    "run1",
+    "rep2",
+    "rep3"
+  ],
+  "n_runs": 3,
+  "n_compared": 331,
+  "pairs": {
+    "run1_vs_rep2": {
+      "n": 331,
+      "urgency_disagree": 5,
+      "urgency_agreement": 0.9848942598187311,
+      "specialty_disagree": 11,
+      "specialty_agreement": 0.9667673716012084
+    },
+    "run1_vs_rep3": {
+      "n": 331,
+      "urgency_disagree": 7,
+      "urgency_agreement": 0.9788519637462235,
+      "specialty_disagree": 9,
+      "specialty_agreement": 0.972809667673716
+    },
+    "rep2_vs_rep3": {
+      "n": 331,
+      "urgency_disagree": 6,
+      "urgency_agreement": 0.9818731117824774,
+      "specialty_disagree": 6,
+      "specialty_agreement": 0.9818731117824774
+    }
+  },
+  "urgency_run_agreement": 0.9818731117824774,
+  "specialty_run_agreement": 0.973816717019134,
+  "urgency_agreement_range": {
+    "min": 0.9788519637462235,
+    "max": 0.9848942598187311,
+    "spread": 0.006042296072507614
+  },
+  "specialty_agreement_range": {
+    "min": 0.9667673716012084,
+    "max": 0.9818731117824774,
+    "spread": 0.015105740181268978
+  },
+  "urgency_all_runs_agree": 0.972809667673716,
+  "urgency_disagree_pooled": 18,
+  "n_comparisons_pooled": 993,
+  "per_run": {
+    "run1": {
+      "urgency_exact_acc": 0.540785498489426,
+      "specialty_acc": 0.5589123867069486,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    },
+    "rep2": {
+      "urgency_exact_acc": 0.5498489425981873,
+      "specialty_acc": 0.5709969788519638,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    },
+    "rep3": {
+      "urgency_exact_acc": 0.5438066465256798,
+      "specialty_acc": 0.5770392749244713,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    }
+  },
+  "urgency_exact_acc_range": {
+    "min": 0.540785498489426,
+    "max": 0.5498489425981873,
+    "spread": 0.009063444108761254
+  },
+  "specialty_acc_range": {
+    "min": 0.5589123867069486,
+    "max": 0.5770392749244713,
+    "spread": 0.01812688821752262
+  },
+  "files": [
+    "rag_predictions.csv",
+    "rag_predictions_rep2.csv",
+    "rag_predictions_rep3.csv"
+  ]
+}

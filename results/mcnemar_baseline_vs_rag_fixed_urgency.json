@@ -1,0 +1,14 @@
+{
+  "metric": "urgency",
+  "mapped": false,
+  "n_paired": 331,
+  "acc_a": 0.540785498489426,
+  "acc_b": 0.48036253776435045,
+  "both_correct": 150,
+  "neither_correct": 143,
+  "only_a_correct": 29,
+  "only_b_correct": 9,
+  "p_value": 0.0016580525261815637,
+  "file_a": "baseline_predictions.csv",
+  "file_b": "rag_fixed_predictions.csv"
+}

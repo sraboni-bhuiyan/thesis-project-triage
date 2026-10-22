@@ -1,0 +1,83 @@
+{
+  "set": "performance",
+  "runs": [
+    "run1",
+    "rep2",
+    "rep3"
+  ],
+  "n_runs": 3,
+  "n_compared": 331,
+  "pairs": {
+    "run1_vs_rep2": {
+      "n": 331,
+      "urgency_disagree": 4,
+      "urgency_agreement": 0.9879154078549849,
+      "specialty_disagree": 7,
+      "specialty_agreement": 0.9788519637462235
+    },
+    "run1_vs_rep3": {
+      "n": 331,
+      "urgency_disagree": 5,
+      "urgency_agreement": 0.9848942598187311,
+      "specialty_disagree": 7,
+      "specialty_agreement": 0.9788519637462235
+    },
+    "rep2_vs_rep3": {
+      "n": 331,
+      "urgency_disagree": 3,
+      "urgency_agreement": 0.9909365558912386,
+      "specialty_disagree": 10,
+      "specialty_agreement": 0.9697885196374623
+    }
+  },
+  "urgency_run_agreement": 0.9879154078549849,
+  "specialty_run_agreement": 0.9758308157099697,
+  "urgency_agreement_range": {
+    "min": 0.9848942598187311,
+    "max": 0.9909365558912386,
+    "spread": 0.0060422960725075026
+  },
+  "specialty_agreement_range": {
+    "min": 0.9697885196374623,
+    "max": 0.9788519637462235,
+    "spread": 0.009063444108761254
+  },
+  "urgency_all_runs_agree": 0.9818731117824774,
+  "urgency_disagree_pooled": 12,
+  "n_comparisons_pooled": 993,
+  "per_run": {
+    "run1": {
+      "urgency_exact_acc": 0.48036253776435045,
+      "specialty_acc": 0.552870090634441,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    },
+    "rep2": {
+      "urgency_exact_acc": 0.48036253776435045,
+      "specialty_acc": 0.5498489425981873,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    },
+    "rep3": {
+      "urgency_exact_acc": 0.4773413897280967,
+      "specialty_acc": 0.5438066465256798,
+      "n_error": 0,
+      "n_invalid_urgency": 0
+    }
+  },
+  "urgency_exact_acc_range": {
+    "min": 0.4773413897280967,
+    "max": 0.48036253776435045,
+    "spread": 0.0030211480362537513
+  },
+  "specialty_acc_range": {
+    "min": 0.5438066465256798,
+    "max": 0.552870090634441,
+    "spread": 0.009063444108761254
+  },
+  "files": [
+    "rag_fixed_predictions.csv",
+    "rag_fixed_predictions_rep2.csv",
+    "rag_fixed_predictions_rep3.csv"
+  ]
+}

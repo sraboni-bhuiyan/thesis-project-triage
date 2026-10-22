@@ -1,0 +1,18 @@
+{
+  "n_cases": 25,
+  "n_judgments": 75,
+  "n_relevant": 31,
+  "p_at_3": 0.4133333333333333,
+  "mrr": 0.7333333333333333,
+  "ndcg_at_3": 0.7617896355549323,
+  "precision_by_rank": {
+    "1": 0.6,
+    "2": 0.48,
+    "3": 0.16
+  },
+  "cases_with_no_relevant": 3,
+  "n_cases_rated": 25,
+  "precision_at_k": 0.4133333333333333,
+  "ndcg_at_k": 0.7617896355549323,
+  "sheet": "results/retrieval_rating_sheet_v2_rated.csv"
+}

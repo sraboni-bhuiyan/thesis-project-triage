@@ -1,0 +1,207 @@
+{
+  "started_utc": "2026-10-14T17:31:56+00:00",
+  "finished_utc": "2026-10-14T17:31:57+00:00",
+  "git_commit": null,
+  "git_dirty": true,
+  "python": "3.13.9",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "corpus_sha256": "86929e677b8d6267",
+  "cases_sha256": "0be4dd3d2007e05a",
+  "variants_sha256": "3284b4b55553643a",
+  "fixed_context_sha256": "f88db9c9dbc14de7",
+  "args": {
+    "dry_run": false,
+    "offline": true,
+    "only": [
+      "analysis",
+      "report"
+    ],
+    "start": null,
+    "force": false,
+    "force_api": false,
+    "sleep": 0.0
+  },
+  "stages": [
+    "analysis",
+    "report"
+  ],
+  "steps": [
+    {
+      "step": "summary table + figures",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_masked (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_masked (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_fixed (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_fixed (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_masked (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_masked (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_fixed (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_fixed (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag_masked vs rag_fixed (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag_masked vs rag_fixed (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs baseline_rerun (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs baseline_rerun (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep2 vs rag (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep2 vs rag_masked (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep2 vs rag (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep2 vs rag_masked (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep3 vs rag (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep3 vs rag_masked (urgency)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep3 vs rag (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar C1 rep3 vs rag_masked (specialty)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_masked (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar baseline vs rag_fixed (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_masked (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag vs rag_fixed (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "McNemar rag_masked vs rag_fixed (specialty, mapped)",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor baseline",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor baseline_variants",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor rag",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor rag_variants",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor rag_masked",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor rag_masked_variants",
+      "status": "up-to-date"
+    },
+    {
+      "step": "noise floor rag_fixed",
+      "status": "up-to-date"
+    },
+    {
+      "step": "fairness tests baseline",
+      "status": "up-to-date"
+    },
+    {
+      "step": "fairness tests rag",
+      "status": "up-to-date"
+    },
+    {
+      "step": "fairness tests rag_masked",
+      "status": "up-to-date"
+    },
+    {
+      "step": "retrieval statistics",
+      "status": "up-to-date"
+    },
+    {
+      "step": "error cases",
+      "status": "up-to-date"
+    },
+    {
+      "step": "retrieval relevance scores",
+      "status": "up-to-date"
+    },
+    {
+      "step": "build single-file report",
+      "status": "ok",
+      "seconds": 0.1,
+      "cmd": "src/build_report.py",
+      "log": "results\\runs\\20261014-193156\\43_build_single_file_report.log"
+    }
+  ],
+  "failed_at": null,
+  "run_id": "20261014-193156"
+}

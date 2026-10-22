@@ -1,0 +1,34 @@
+{
+  "n_cases": 20,
+  "n_error": 0,
+  "n_answered": 20,
+  "n_invalid_urgency": 0,
+  "urgency_exact_acc": 0.5,
+  "urgency_adjacent_acc": 1.0,
+  "over_triage_rate": 0.4,
+  "under_triage_rate": 0.1,
+  "urgency_balanced_acc": 0.36296296296296293,
+  "urgency_recall_by_class": {
+    "orange": 0.8888888888888888,
+    "yellow": 0.2,
+    "red": 0.0
+  },
+  "n_by_true_class": {
+    "orange": 9,
+    "yellow": 10,
+    "red": 1
+  },
+  "red_recall": 0.0,
+  "n_red": 1,
+  "specialty_acc": 0.45,
+  "specialty_acc_any_listed": 0.5,
+  "specialty_ceiling": 1.0,
+  "specialty_acc_mapped": 0.45,
+  "specialty_acc_any_listed_mapped": 0.5,
+  "n_invalid_specialty": 0,
+  "pred_file": "smoke_rag.csv",
+  "cases_file": "main.csv",
+  "models": [
+    "nvidia/nemotron-3-ultra-550b-a55b"
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "n_runs": 3,
+  "dpr": 0.014285714285714235,
+  "high_rate_by_group": {
+    "young_male": 0.8285714285714286,
+    "young_female": 0.8428571428571429,
+    "old_male": 0.8285714285714286,
+    "old_female": 0.8428571428571429
+  },
+  "n_by_group": {
+    "young_male": 70,
+    "young_female": 70,
+    "old_male": 70,
+    "old_female": 70
+  },
+  "tpr_gap": 0.0,
+  "fpr_gap": 0.025000000000000022,
+  "eod": 0.025000000000000022,
+  "tpr_by_group": {
+    "young_male": 0.9666666666666667,
+    "young_female": 0.9666666666666667,
+    "old_male": 0.9666666666666667,
+    "old_female": 0.9666666666666667
+  },
+  "fpr_by_group": {
+    "young_male": 0.725,
+    "young_female": 0.75,
+    "old_male": 0.725,
+    "old_female": 0.75
+  },
+  "n_pos_by_group": {
+    "young_male": 30,
+    "young_female": 30,
+    "old_male": 30,
+    "old_female": 30
+  },
+  "n_neg_by_group": {
+    "young_male": 40,
+    "young_female": 40,
+    "old_male": 40,
+    "old_female": 40
+  },
+  "consistency": 0.9571428571428572,
+  "n_consistent": 67,
+  "n_base_cases": 70,
+  "gender_flip": {
+    "rate": 0.03571428571428571,
+    "flips": 5,
+    "n_pairs": 140
+  },
+  "age_flip": {
+    "rate": 0.02142857142857143,
+    "flips": 3,
+    "n_pairs": 140
+  },
+  "noise_disagreement": {
+    "runs": "run1 vs rep2",
+    "rate": 0.017857142857142856,
+    "disagree": 5,
+    "n_comparisons": 280
+  },
+  "fisher_gender_flip_vs_noise": {
+    "rate_1": 0.03571428571428571,
+    "rate_2": 0.017857142857142856,
+    "k_1": 5,
+    "n_1": 140,
+    "k_2": 5,
+    "n_2": 280,
+    "odds_ratio": 2.037037037037037,
+    "p_value": 0.3118957075669652
+  },
+  "fisher_age_flip_vs_noise": {
+    "rate_1": 0.02142857142857143,
+    "rate_2": 0.017857142857142856,
+    "k_1": 3,
+    "n_1": 140,
+    "k_2": 5,
+    "n_2": 280,
+    "odds_ratio": 1.2043795620437956,
+    "p_value": 1.0
+  },
+  "gender_main_effect": {
+    "comparison": "female vs male",
+    "n_pairs": 140,
+    "only_male_high": 0,
+    "only_female_high": 2,
+    "rate_difference": 0.014285714285714285,
+    "p_value": 0.5,
+    "alpha": 0.008333333333333333,
+    "significant": false,
+    "same_direction_all_runs": false,
+    "verdict": "not significant",
+    "by_run": {
+      "run1": {
+        "only_male_high": 0,
+        "only_female_high": 2,
+        "n_pairs": 140,
+        "direction": 1,
+        "p_value": 0.5
+      },
+      "rep2": {
+        "only_male_high": 1,
+        "only_female_high": 1,
+        "n_pairs": 140,
+        "direction": 0,
+        "p_value": 1.0
+      },
+      "rep3": {
+        "only_male_high": 2,
+        "only_female_high": 1,
+        "n_pairs": 140,
+        "direction": -1,
+        "p_value": 1.0
+      }
+    }
+  },
+  "age_main_effect": {
+    "comparison": "old vs young",
+    "n_pairs": 140,
+    "only_young_high": 0,
+    "only_old_high": 0,
+    "rate_difference": 0.0,
+    "p_value": 1.0,
+    "alpha": 0.008333333333333333,
+    "significant": false,
+    "same_direction_all_runs": false,
+    "verdict": "not significant",
+    "by_run": {
+      "run1": {
+        "only_young_high": 0,
+        "only_old_high": 0,
+        "n_pairs": 140,
+        "direction": 0,
+        "p_value": 1.0
+      },
+      "rep2": {
+        "only_young_high": 2,
+        "only_old_high": 0,
+        "n_pairs": 140,
+        "direction": -1,
+        "p_value": 0.5
+      },
+      "rep3": {
+        "only_young_high": 1,
+        "only_old_high": 2,
+        "n_pairs": 140,
+        "direction": 1,
+        "p_value": 1.0
+      }
+    }
+  },
+  "group_pairs_bonferroni_alpha": 0.008333333333333333,
+  "group_pairs": [
+    {
+      "a": "young_male",
+      "b": "young_female",
+      "n": 70,
+      "only_a_high": 0,
+      "only_b_high": 1,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "a": "young_male",
+      "b": "old_male",
+      "n": 70,
+      "only_a_high": 0,
+      "only_b_high": 0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "a": "young_male",
+      "b": "old_female",
+      "n": 70,
+      "only_a_high": 0,
+      "only_b_high": 1,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "a": "young_female",
+      "b": "old_male",
+      "n": 70,
+      "only_a_high": 1,
+      "only_b_high": 0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "a": "young_female",
+      "b": "old_female",
+      "n": 70,
+      "only_a_high": 0,
+      "only_b_high": 0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "a": "old_male",
+      "b": "old_female",
+      "n": 70,
+      "only_a_high": 0,
+      "only_b_high": 1,
+      "p_value": 1.0,
+      "significant": false
+    }
+  ],
+  "files": [
+    "baseline_variants_predictions.csv",
+    "baseline_variants_predictions_rep2.csv",
+    "baseline_variants_predictions_rep3.csv"
+  ]
+}

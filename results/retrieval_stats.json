@@ -1,0 +1,169 @@
+{
+  "C2 performance": {
+    "n_queries": 331,
+    "n_retrievals": 993,
+    "share_by_document": {
+      "06_ctas_participant_manual": 0.6344410876132931,
+      "07_esi_handbook_v5": 0.364551863041289,
+      "05_mts_overview": 0.0010070493454179255
+    },
+    "count_by_document": {
+      "06_ctas_participant_manual": 630,
+      "07_esi_handbook_v5": 362,
+      "05_mts_overview": 1
+    },
+    "distinct_chunks": 66,
+    "distinct_chunks_rank1": 43,
+    "mean_top1_similarity": 0.48586742890565415,
+    "most_retrieved": [
+      [
+        "06_ctas_participant_manual_023",
+        120
+      ],
+      [
+        "07_esi_handbook_v5_039",
+        111
+      ],
+      [
+        "06_ctas_participant_manual_079",
+        82
+      ],
+      [
+        "06_ctas_participant_manual_025",
+        70
+      ],
+      [
+        "06_ctas_participant_manual_019",
+        67
+      ]
+    ]
+  },
+  "C3 performance": {
+    "n_queries": 331,
+    "n_retrievals": 993,
+    "share_by_document": {
+      "06_ctas_participant_manual": 0.6455186304128903,
+      "07_esi_handbook_v5": 0.35347432024169184,
+      "05_mts_overview": 0.0010070493454179255
+    },
+    "count_by_document": {
+      "06_ctas_participant_manual": 641,
+      "07_esi_handbook_v5": 351,
+      "05_mts_overview": 1
+    },
+    "distinct_chunks": 69,
+    "distinct_chunks_rank1": 39,
+    "mean_top1_similarity": 0.4993097917190851,
+    "most_retrieved": [
+      [
+        "06_ctas_participant_manual_023",
+        108
+      ],
+      [
+        "07_esi_handbook_v5_039",
+        101
+      ],
+      [
+        "06_ctas_participant_manual_019",
+        94
+      ],
+      [
+        "06_ctas_participant_manual_079",
+        78
+      ],
+      [
+        "06_ctas_participant_manual_025",
+        60
+      ]
+    ]
+  },
+  "C2 variants": {
+    "n_queries": 280,
+    "n_retrievals": 840,
+    "share_by_document": {
+      "06_ctas_participant_manual": 0.6357142857142857,
+      "07_esi_handbook_v5": 0.36428571428571427
+    },
+    "count_by_document": {
+      "06_ctas_participant_manual": 534,
+      "07_esi_handbook_v5": 306
+    },
+    "distinct_chunks": 50,
+    "distinct_chunks_rank1": 26,
+    "mean_top1_similarity": 0.48845230798636163,
+    "most_retrieved": [
+      [
+        "06_ctas_participant_manual_023",
+        106
+      ],
+      [
+        "07_esi_handbook_v5_039",
+        61
+      ],
+      [
+        "06_ctas_participant_manual_019",
+        60
+      ],
+      [
+        "06_ctas_participant_manual_079",
+        59
+      ],
+      [
+        "07_esi_handbook_v5_031",
+        46
+      ]
+    ]
+  },
+  "C3 variants": {
+    "n_queries": 280,
+    "n_retrievals": 840,
+    "share_by_document": {
+      "06_ctas_participant_manual": 0.6333333333333333,
+      "07_esi_handbook_v5": 0.36666666666666664
+    },
+    "count_by_document": {
+      "06_ctas_participant_manual": 532,
+      "07_esi_handbook_v5": 308
+    },
+    "distinct_chunks": 41,
+    "distinct_chunks_rank1": 20,
+    "mean_top1_similarity": 0.5062080085277557,
+    "most_retrieved": [
+      [
+        "06_ctas_participant_manual_023",
+        108
+      ],
+      [
+        "06_ctas_participant_manual_019",
+        72
+      ],
+      [
+        "07_esi_handbook_v5_039",
+        56
+      ],
+      [
+        "07_esi_handbook_v5_031",
+        56
+      ],
+      [
+        "06_ctas_participant_manual_079",
+        44
+      ]
+    ]
+  },
+  "c4_overlap_with_c2": {
+    "fixed_chunk_ids": [
+      "06_ctas_participant_manual_019",
+      "06_ctas_participant_manual_023",
+      "07_esi_handbook_v5_039"
+    ],
+    "n_cases": 331,
+    "cases_by_overlap": {
+      "0": 88,
+      "1": 189,
+      "2": 53,
+      "3": 1
+    },
+    "mean_overlap": 0.9003021148036254
+  }
+}

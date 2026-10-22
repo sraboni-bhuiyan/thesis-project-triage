@@ -1,0 +1,115 @@
+{
+  "set": "variants",
+  "runs": [
+    "run1",
+    "rep2",
+    "rep3"
+  ],
+  "n_runs": 3,
+  "n_compared": 280,
+  "pairs": {
+    "run1_vs_rep2": {
+      "n": 280,
+      "urgency_disagree": 5,
+      "urgency_agreement": 0.9821428571428571,
+      "specialty_disagree": 8,
+      "specialty_agreement": 0.9714285714285714
+    },
+    "run1_vs_rep3": {
+      "n": 280,
+      "urgency_disagree": 7,
+      "urgency_agreement": 0.975,
+      "specialty_disagree": 8,
+      "specialty_agreement": 0.9714285714285714
+    },
+    "rep2_vs_rep3": {
+      "n": 280,
+      "urgency_disagree": 4,
+      "urgency_agreement": 0.9857142857142858,
+      "specialty_disagree": 9,
+      "specialty_agreement": 0.9678571428571429
+    }
+  },
+  "urgency_run_agreement": 0.980952380952381,
+  "specialty_run_agreement": 0.9702380952380952,
+  "urgency_agreement_range": {
+    "min": 0.975,
+    "max": 0.9857142857142858,
+    "spread": 0.010714285714285787
+  },
+  "specialty_agreement_range": {
+    "min": 0.9678571428571429,
+    "max": 0.9714285714285714,
+    "spread": 0.0035714285714285587
+  },
+  "urgency_all_runs_agree": 0.9714285714285714,
+  "urgency_disagree_pooled": 16,
+  "n_comparisons_pooled": 840,
+  "per_run": {
+    "run1": {
+      "urgency_exact_acc": 0.48928571428571427,
+      "specialty_acc": 0.5892857142857143,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.9571428571428572,
+      "dpr": 0.014285714285714235,
+      "gender_flip_rate": 0.03571428571428571,
+      "age_flip_rate": 0.02142857142857143
+    },
+    "rep2": {
+      "urgency_exact_acc": 0.48214285714285715,
+      "specialty_acc": 0.5821428571428572,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.9428571428571428,
+      "dpr": 0.014285714285714235,
+      "gender_flip_rate": 0.02857142857142857,
+      "age_flip_rate": 0.02857142857142857
+    },
+    "rep3": {
+      "urgency_exact_acc": 0.48928571428571427,
+      "specialty_acc": 0.5821428571428572,
+      "n_error": 0,
+      "n_invalid_urgency": 0,
+      "consistency": 0.9285714285714286,
+      "dpr": 0.02857142857142847,
+      "gender_flip_rate": 0.02857142857142857,
+      "age_flip_rate": 0.04285714285714286
+    }
+  },
+  "urgency_exact_acc_range": {
+    "min": 0.48214285714285715,
+    "max": 0.48928571428571427,
+    "spread": 0.0071428571428571175
+  },
+  "specialty_acc_range": {
+    "min": 0.5821428571428572,
+    "max": 0.5892857142857143,
+    "spread": 0.0071428571428571175
+  },
+  "consistency_range": {
+    "min": 0.9285714285714286,
+    "max": 0.9571428571428572,
+    "spread": 0.02857142857142858
+  },
+  "dpr_range": {
+    "min": 0.014285714285714235,
+    "max": 0.02857142857142847,
+    "spread": 0.014285714285714235
+  },
+  "gender_flip_rate_range": {
+    "min": 0.02857142857142857,
+    "max": 0.03571428571428571,
+    "spread": 0.007142857142857142
+  },
+  "age_flip_rate_range": {
+    "min": 0.02142857142857143,
+    "max": 0.04285714285714286,
+    "spread": 0.02142857142857143
+  },
+  "files": [
+    "baseline_variants_predictions.csv",
+    "baseline_variants_predictions_rep2.csv",
+    "baseline_variants_predictions_rep3.csv"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "metric": "specialty",
+  "mapped": false,
+  "n_paired": 331,
+  "acc_a": 0.6163141993957704,
+  "acc_b": 0.5891238670694864,
+  "both_correct": 186,
+  "neither_correct": 118,
+  "only_a_correct": 18,
+  "only_b_correct": 9,
+  "p_value": 0.12207812070846558,
+  "file_a": "baseline_predictions_rep2.csv",
+  "file_b": "rag_masked_predictions.csv"
+}
