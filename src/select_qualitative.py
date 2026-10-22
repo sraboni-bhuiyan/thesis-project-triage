@@ -9,6 +9,10 @@
 #        worsened_over        2  C1 correct, C2 over-triages
 #        demographic_flip     2  C2 variants of one base case disagree
 #   3. random pick in each category (config.SEED), each case used once
+#   4. plus PURPOSIVE cases, added after the random picks (so the random picks don't change).
+#      case 10 = 38195943: the C2 age effect (young yellow / old orange in all 3 C2 variant runs,
+#      C1 and C3 stable). none of the random flips shows it. chosen from predictions only,
+#      label it as purposive in the thesis.
 # outputs:
 #   results/qualitative_selection.csv   ids, labels, predictions only (no case text)
 #   results/qualitative/case_<id>.md    reading sheet per case: full case text, C1/C2/C4 rationales,
@@ -29,6 +33,7 @@ from fairness_metrics import GROUPS, variant_table
 N_RUNS = 3
 QUOTA = [("c2_safety_downgrade", 2), ("shared_downgrade", 1), ("improved", 2), ("worsened_over", 2),
          ("demographic_flip", 2)]
+PURPOSIVE = [("age_effect_purposive", "38195943")]  # variant cases, see rule 4
 OUT_DIR = RESULTS_PATH / "qualitative"
 
 
@@ -165,6 +170,8 @@ def main():
 
     cats = categorise(errors, c1, c2, vruns)
     picked = select(cats)
+    for category, cid in PURPOSIVE:
+        picked.append((category, cid))
 
     cases = {}
     for c in read_csv(CASES_PATH):
@@ -185,7 +192,7 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_rows = []
     for category, cid in picked:
-        flip = category == "demographic_flip"
+        flip = category in ("demographic_flip", "age_effect_purposive")
         if flip:
             case = vcases[cid]
             preds = {}
