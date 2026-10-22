@@ -1,8 +1,8 @@
 {
-  "started_utc": "2026-10-14T17:31:56+00:00",
-  "finished_utc": "2026-10-14T17:31:57+00:00",
-  "git_commit": null,
-  "git_dirty": true,
+  "started_utc": "2026-10-22T11:44:35+00:00",
+  "finished_utc": "2026-10-22T11:44:35+00:00",
+  "git_commit": "0173525",
+  "git_dirty": false,
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26300-SP0",
   "corpus_sha256": "86929e677b8d6267",
@@ -199,9 +199,9 @@
       "status": "ok",
       "seconds": 0.1,
       "cmd": "src/build_report.py",
-      "log": "results\\runs\\20261014-193156\\43_build_single_file_report.log"
+      "log": "results\\runs\\20261022-134435\\43_build_single_file_report.log"
     }
   ],
   "failed_at": null,
-  "run_id": "20261014-193156"
+  "run_id": "20261022-134435"
 }

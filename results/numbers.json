@@ -51,6 +51,101 @@
   },
   "majority_class": "yellow",
   "majority_class_acc": 0.5800604229607251,
+  "data.n_cases": 331,
+  "data.gender_counts": {
+    "Female": 180,
+    "Male": 151
+  },
+  "data.age_mean": 55.93655589123867,
+  "data.age_sd": 20.18833053821815,
+  "data.age_median": 58.0,
+  "data.age_min": 18.0,
+  "data.age_max": 91.0,
+  "data.age_group_counts": {
+    "young": 84,
+    "unassigned": 126,
+    "old": 121
+  },
+  "data.n_high_acuity": 134,
+  "baseline.red_recall": 0.3333333333333333,
+  "baseline.n_red": 15,
+  "baseline.n_red_caught": 5,
+  "baseline.urgency_balanced_acc": 0.39616158963585435,
+  "baseline.urgency_recall_by_class": {
+    "orange": 0.907563025210084,
+    "yellow": 0.34375,
+    "red": 0.3333333333333333,
+    "green": 0.0
+  },
+  "baseline.pred_distribution": {
+    "orange": 246,
+    "yellow": 75,
+    "red": 10
+  },
+  "baseline.n_high_acuity_caught": 127,
+  "baseline.high_acuity_recall": 0.9477611940298507,
+  "rag.red_recall": 0.13333333333333333,
+  "rag.n_red": 15,
+  "rag.n_red_caught": 2,
+  "rag.urgency_balanced_acc": 0.35166535364145657,
+  "rag.urgency_recall_by_class": {
+    "orange": 0.9243697478991597,
+    "yellow": 0.3489583333333333,
+    "red": 0.13333333333333333,
+    "green": 0.0
+  },
+  "rag.pred_distribution": {
+    "orange": 250,
+    "yellow": 77,
+    "red": 4
+  },
+  "rag.n_high_acuity_caught": 126,
+  "rag.high_acuity_recall": 0.9402985074626866,
+  "rag_masked.red_recall": 0.2,
+  "rag_masked.n_red": 15,
+  "rag_masked.n_red_caught": 3,
+  "rag_masked.urgency_balanced_acc": 0.36253282563025213,
+  "rag_masked.urgency_recall_by_class": {
+    "orange": 0.8907563025210085,
+    "yellow": 0.359375,
+    "red": 0.2,
+    "green": 0.0
+  },
+  "rag_masked.pred_distribution": {
+    "orange": 240,
+    "yellow": 81,
+    "red": 8,
+    "green": 2
+  },
+  "rag_masked.n_high_acuity_caught": 124,
+  "rag_masked.high_acuity_recall": 0.9253731343283582,
+  "rag_fixed.red_recall": 0.13333333333333333,
+  "rag_fixed.n_red": 15,
+  "rag_fixed.n_red_caught": 2,
+  "rag_fixed.urgency_balanced_acc": 0.32961747198879554,
+  "rag_fixed.urgency_recall_by_class": {
+    "orange": 0.9663865546218487,
+    "yellow": 0.21875,
+    "red": 0.13333333333333333,
+    "green": 0.0
+  },
+  "rag_fixed.pred_distribution": {
+    "orange": 281,
+    "yellow": 45,
+    "red": 4,
+    "green": 1
+  },
+  "rag_fixed.n_high_acuity_caught": 132,
+  "rag_fixed.high_acuity_recall": 0.9850746268656716,
+  "transitions.baseline_to_rag.n_changed": 44,
+  "transitions.baseline_to_rag.fixed": 20,
+  "transitions.baseline_to_rag.broken": 20,
+  "transitions.baseline_to_rag.both_wrong": 4,
+  "transitions.baseline_to_rag.by_direction": {
+    "yellow->orange": 18,
+    "orange->yellow": 20,
+    "red->orange": 6
+  },
   "n_comparisons": 12,
   "bonferroni_alpha": 0.004166666666666667,
   "mcnemar.baseline_vs_rag.specialty.p": 0.003326892852783203,
@@ -514,6 +609,26 @@
   "retrieval.precision_at_k": 0.4133333333333333,
   "retrieval.ndcg_at_k": 0.7617896355549323,
   "retrieval.sheet": "results/retrieval_rating_sheet_v2_rated.csv",
+  "corpus.n_chunks": 207,
+  "corpus.n_words": 51458,
+  "corpus.chunks_by_document": {
+    "01_charite_mts": 2,
+    "02_nhs_initial_assessment": 17,
+    "03_nhs111": 1,
+    "04_nhs111_when_to_use_111": 4,
+    "05_mts_overview": 3,
+    "06_ctas_participant_manual": 106,
+    "07_esi_handbook_v5": 74
+  },
+  "corpus.words_by_document": {
+    "01_charite_mts": 500,
+    "02_nhs_initial_assessment": 4250,
+    "03_nhs111": 197,
+    "04_nhs111_when_to_use_111": 924,
+    "05_mts_overview": 608,
+    "06_ctas_participant_manual": 26479,
+    "07_esi_handbook_v5": 18500
+  },
   "c4.chunk_ids": [
     "06_ctas_participant_manual_023",
     "07_esi_handbook_v5_039",
