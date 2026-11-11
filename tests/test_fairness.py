@@ -1,7 +1,8 @@
 import pytest
 
 from fairness_metrics import (AGE_PAIRS, GENDER_PAIRS, GROUPS, age_group, counterfactual_consistency, dpr, eod,
-                              flip_rate, group_of, paired_high, paired_high_pooled, run_disagreement)
+                              flip_rate, group_of, paired_high, paired_high_by_base, paired_high_pooled,
+                              run_disagreement)
 from metrics import correct_by_case
 from stat_tests import fisher_rates, mcnemar_exact
 
@@ -71,6 +72,17 @@ def test_paired_high():
     preds = variant_preds({"a": ALL_SAME, "b": ONE_OFF})
     assert paired_high(preds, "young_male", "young_female") == (1, 0, 2)
     assert paired_high_pooled(preds, GENDER_PAIRS) == (1, 0, 4)
+
+
+def test_paired_high_by_base():
+    # a: old high in both genders -> one vote for old (not two)
+    # b: old high for male, young high for female -> tie
+    # c: nobody differs -> tie
+    a = {"young_male": "yellow", "young_female": "yellow", "old_male": "orange", "old_female": "orange"}
+    b = {"young_male": "yellow", "young_female": "orange", "old_male": "orange", "old_female": "yellow"}
+    preds = variant_preds({"a": a, "b": b, "c": ALL_SAME})
+    assert paired_high_pooled(preds, AGE_PAIRS) == (1, 3, 6)          # pair level: 1 young, 3 old
+    assert paired_high_by_base(preds, AGE_PAIRS) == (0, 1, 2)   # (young higher, old higher, tied)
 
 
 def test_run_disagreement():

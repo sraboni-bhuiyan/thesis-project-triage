@@ -5,6 +5,8 @@
 #   - paired mcnemar over matched variants, 140 pairs each
 #   - bonferroni over 6 tests (2 effects x C1-C3), alpha = config.MAIN_EFFECT_ALPHA
 #   - "claimed" = significant in run1 AND same direction in every repeat, else "fragile"
+#   - also a base-case-level test (one vote per base case, sign test), shown next to it,
+#     because the 140 pairs come from only 70 base cases
 # - 6 group pairs: paired mcnemar over 70 base cases, alpha = 0.05 / 6
 #
 # usage:
@@ -18,7 +20,8 @@ import json
 from common import read_csv, resolve, write_json
 from config import ALPHA, MAIN_EFFECT_ALPHA
 from fairness_metrics import (AGE_PAIRS, GENDER_PAIRS, GROUPS, counterfactual_consistency, dpr, eod,
-                              flip_rate, paired_high, paired_high_pooled, run_disagreement)
+                              flip_rate, paired_high, paired_high_by_base, paired_high_pooled,
+                              run_disagreement)
 from metrics import load_truth
 from stat_tests import fisher_rates, mcnemar_exact
 
@@ -52,6 +55,15 @@ def main_effect(runs, pairs, ref, other):
             "p_value": mcnemar_exact(only_ref, only_other),
         }
 
+        # same test with one vote per base case (sign test over base cases)
+        bases_ref, bases_other, ties = paired_high_by_base(runs[i], pairs)
+        by_run[names[i]]["base_case"] = {
+            "bases_" + ref + "_higher": bases_ref,
+            "bases_" + other + "_higher": bases_other,
+            "bases_tied": ties,
+            "p_value": mcnemar_exact(bases_ref, bases_other),
+        }
+
     primary = by_run["run1"]
     significant = primary["p_value"] < MAIN_EFFECT_ALPHA
 
@@ -76,6 +88,19 @@ def main_effect(runs, pairs, ref, other):
     else:
         verdict = "not significant"
 
+    # base-case-level test on run1, reported next to the pair-level test
+    # (it does not change the verdict above)
+    base = primary["base_case"]
+    base_p = base["p_value"]
+    base_case = {
+        "bases_" + ref + "_higher": base["bases_" + ref + "_higher"],
+        "bases_" + other + "_higher": base["bases_" + other + "_higher"],
+        "bases_tied": base["bases_tied"],
+        "p_value": base_p,
+        "alpha": MAIN_EFFECT_ALPHA,
+        "significant": base_p < MAIN_EFFECT_ALPHA,
+    }
+
     return {
         "comparison": other + " vs " + ref,
         "n_pairs": n,
@@ -87,6 +112,7 @@ def main_effect(runs, pairs, ref, other):
         "significant": significant,
         "same_direction_all_runs": consistent,
         "verdict": verdict,
+        "base_case_test": base_case,
         "by_run": by_run,
     }
 

@@ -228,6 +228,35 @@ def paired_high_pooled(preds, pairs):
     return total_a, total_b, total_n
 
 
+def paired_high_by_base(preds, pairs):
+    # same as paired_high_pooled, but one vote per base case
+    # (the pairs of one base case are not independent)
+    # per base case: (pairs where only a is high) - (pairs where only b is high)
+    # > 0 -> base case counts for a, < 0 -> for b, 0 -> tie (left out)
+    bases_a = 0
+    bases_b = 0
+    ties = 0
+    table = variant_table(preds)
+    for base in table:
+        v = table[base]
+        score = 0
+        for a, b in pairs:
+            if a in v and b in v:
+                a_high = v[a] in HIGH_ACUITY
+                b_high = v[b] in HIGH_ACUITY
+                if a_high and not b_high:
+                    score += 1
+                if b_high and not a_high:
+                    score -= 1
+        if score > 0:
+            bases_a += 1
+        elif score < 0:
+            bases_b += 1
+        else:
+            ties += 1
+    return bases_a, bases_b, ties
+
+
 def run_disagreement(preds_a, preds_b, field="pred_urgency"):
     # two runs, same inputs: how many rows got a different label
     if field == "pred_urgency":
