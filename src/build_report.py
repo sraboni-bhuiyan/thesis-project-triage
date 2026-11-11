@@ -551,6 +551,18 @@ def section_fairness():
                 numbers[f"fairness.{cfg}.{eff}.{run}.only_{other}_high"] = r[f"only_{other}_high"]
                 numbers[f"fairness.{cfg}.{eff}.{run}.only_{ref}_high"] = r[f"only_{ref}_high"]
                 per_run.append(f"{run}: {r[f'only_{other}_high']} vs {r[f'only_{ref}_high']}")
+
+            # base-case-level test (one vote per base case)
+            base_runs = []
+            for run, r in m["by_run"].items():
+                b = r["base_case"]
+                numbers[f"fairness.{cfg}.{eff}.base_case.{run}.bases_{other}_higher"] = b[f"bases_{other}_higher"]
+                numbers[f"fairness.{cfg}.{eff}.base_case.{run}.bases_{ref}_higher"] = b[f"bases_{ref}_higher"]
+                numbers[f"fairness.{cfg}.{eff}.base_case.{run}.p_value"] = b["p_value"]
+                base_runs.append(f"{run}: {b[f'bases_{other}_higher']} vs {b[f'bases_{ref}_higher']}")
+            numbers[f"fairness.{cfg}.{eff}.base_case.p_value"] = m["base_case_test"]["p_value"]
+            numbers[f"fairness.{cfg}.{eff}.base_case.significant"] = m["base_case_test"]["significant"]
+
             if m["verdict"] == "claimed":
                 cls = "warn"
             elif m["verdict"] == "fragile":
@@ -558,7 +570,8 @@ def section_fairness():
             else:
                 cls = ""
             effects.append([esc(LABEL[cfg]), esc(f"{other} vs {ref}"), esc(m["n_pairs"]), esc("; ".join(per_run)),
-                            pval(m["p_value"]), f'<span class="{cls}">{esc(m["verdict"])}</span>'])
+                            pval(m["p_value"]), f'<span class="{cls}">{esc(m["verdict"])}</span>',
+                            esc("; ".join(base_runs)), pval(m["base_case_test"]["p_value"])])
 
         for gp in d["group_pairs"]:
             numbers[f"fairness.{cfg}.group_pair.{gp['a']}_vs_{gp['b']}.p"] = gp["p_value"]
@@ -591,8 +604,12 @@ def section_fairness():
             + f"<h3>Main effects (paired exact McNemar, Bonferroni over 6 tests, α = {num(alpha_main, 4)})</h3>"
               "<p>Claimed only if significant in the primary run AND the same direction in every repeat run; "
               "otherwise a significant effect is fragile. Per-run counts: pairs where only the first-named "
-              "group is high vs only the second-named group.</p>"
-            + table(["Config", "Effect", "Pairs", "Per-run counts", "p (run1)", "Verdict"], effects)
+              "group is high vs only the second-named group. The 140 pairs come from 70 base cases, so the "
+              "base-case-level test gives each base case one vote (more pairs for the first-named group, "
+              "for the second, or tied; ties left out) and runs the same exact test on the votes. It is "
+              "reported next to the pair-level test and does not change the verdict.</p>"
+            + table(["Config", "Effect", "Pairs", "Per-run counts", "p (run1)", "Verdict",
+                     "Base cases per run", "p base cases (run1)"], effects)
             + f"<h3>Pairwise group comparisons (Bonferroni α = {num(alpha_pairs, 4)})</h3>"
             + table(["Config", "Groups", "A-only / B-only high", "p", "Result"], pairs)
             + "<p class='note'>C3 masks age and gender, so the four C3 prompts of a base case are identical; "
