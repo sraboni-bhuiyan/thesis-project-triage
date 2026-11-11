@@ -90,27 +90,53 @@
     "significant": false,
     "same_direction_all_runs": false,
     "verdict": "not significant",
+    "base_case_test": {
+      "bases_male_higher": 0,
+      "bases_female_higher": 1,
+      "bases_tied": 69,
+      "p_value": 1.0,
+      "alpha": 0.008333333333333333,
+      "significant": false
+    },
     "by_run": {
       "run1": {
         "only_male_high": 0,
         "only_female_high": 2,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.5
+        "p_value": 0.5,
+        "base_case": {
+          "bases_male_higher": 0,
+          "bases_female_higher": 1,
+          "bases_tied": 69,
+          "p_value": 1.0
+        }
       },
       "rep2": {
         "only_male_high": 1,
         "only_female_high": 1,
         "n_pairs": 140,
         "direction": 0,
-        "p_value": 1.0
+        "p_value": 1.0,
+        "base_case": {
+          "bases_male_higher": 1,
+          "bases_female_higher": 1,
+          "bases_tied": 68,
+          "p_value": 1.0
+        }
       },
       "rep3": {
         "only_male_high": 2,
         "only_female_high": 1,
         "n_pairs": 140,
         "direction": -1,
-        "p_value": 1.0
+        "p_value": 1.0,
+        "base_case": {
+          "bases_male_higher": 2,
+          "bases_female_higher": 1,
+          "bases_tied": 67,
+          "p_value": 1.0
+        }
       }
     }
   },
@@ -125,27 +151,53 @@
     "significant": false,
     "same_direction_all_runs": false,
     "verdict": "not significant",
+    "base_case_test": {
+      "bases_young_higher": 0,
+      "bases_old_higher": 0,
+      "bases_tied": 70,
+      "p_value": 1.0,
+      "alpha": 0.008333333333333333,
+      "significant": false
+    },
     "by_run": {
       "run1": {
         "only_young_high": 0,
         "only_old_high": 0,
         "n_pairs": 140,
         "direction": 0,
-        "p_value": 1.0
+        "p_value": 1.0,
+        "base_case": {
+          "bases_young_higher": 0,
+          "bases_old_higher": 0,
+          "bases_tied": 70,
+          "p_value": 1.0
+        }
       },
       "rep2": {
         "only_young_high": 2,
         "only_old_high": 0,
         "n_pairs": 140,
         "direction": -1,
-        "p_value": 0.5
+        "p_value": 0.5,
+        "base_case": {
+          "bases_young_higher": 2,
+          "bases_old_higher": 0,
+          "bases_tied": 68,
+          "p_value": 0.5
+        }
       },
       "rep3": {
         "only_young_high": 1,
         "only_old_high": 2,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 1.0
+        "p_value": 1.0,
+        "base_case": {
+          "bases_young_higher": 1,
+          "bases_old_higher": 2,
+          "bases_tied": 67,
+          "p_value": 1.0
+        }
       }
     }
   },

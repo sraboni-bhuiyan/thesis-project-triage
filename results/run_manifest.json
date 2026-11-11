@@ -1,8 +1,8 @@
 {
-  "started_utc": "2026-10-22T11:44:35+00:00",
-  "finished_utc": "2026-10-22T11:44:35+00:00",
-  "git_commit": "0173525",
-  "git_dirty": false,
+  "started_utc": "2026-11-11T18:04:02+00:00",
+  "finished_utc": "2026-11-11T18:04:42+00:00",
+  "git_commit": "d09a851",
+  "git_dirty": true,
   "python": "3.13.9",
   "platform": "Windows-11-10.0.26300-SP0",
   "corpus_sha256": "86929e677b8d6267",
@@ -17,7 +17,7 @@
       "report"
     ],
     "start": null,
-    "force": false,
+    "force": true,
     "force_api": false,
     "sleep": 0.0
   },
@@ -28,180 +28,306 @@
   "steps": [
     {
       "step": "summary table + figures",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.7,
+      "cmd": "src/make_summary.py",
+      "log": "results\\runs\\20261111-190402\\01_summary_table_figures.log"
     },
     {
       "step": "McNemar baseline vs rag (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_predictions.csv --metric urgency --output results/mcnemar_baseline_vs_rag_urgency.json",
+      "log": "results\\runs\\20261111-190402\\02_mcnemar_baseline_vs_rag_urgency.log"
     },
     {
       "step": "McNemar baseline vs rag (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.3,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_predictions.csv --metric specialty --output results/mcnemar_baseline_vs_rag_specialty.json",
+      "log": "results\\runs\\20261111-190402\\03_mcnemar_baseline_vs_rag_specialty.log"
     },
     {
       "step": "McNemar baseline vs rag_masked (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_masked_predictions.csv --metric urgency --output results/mcnemar_baseline_vs_rag_masked_urgency.json",
+      "log": "results\\runs\\20261111-190402\\04_mcnemar_baseline_vs_rag_masked_urgency.log"
     },
     {
       "step": "McNemar baseline vs rag_masked (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_masked_predictions.csv --metric specialty --output results/mcnemar_baseline_vs_rag_masked_specialty.json",
+      "log": "results\\runs\\20261111-190402\\05_mcnemar_baseline_vs_rag_masked_specialty.log"
     },
     {
       "step": "McNemar baseline vs rag_fixed (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_fixed_predictions.csv --metric urgency --output results/mcnemar_baseline_vs_rag_fixed_urgency.json",
+      "log": "results\\runs\\20261111-190402\\06_mcnemar_baseline_vs_rag_fixed_urgency.log"
     },
     {
       "step": "McNemar baseline vs rag_fixed (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --output results/mcnemar_baseline_vs_rag_fixed_specialty.json",
+      "log": "results\\runs\\20261111-190402\\07_mcnemar_baseline_vs_rag_fixed_specialty.log"
     },
     {
       "step": "McNemar rag vs rag_masked (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_masked_predictions.csv --metric urgency --output results/mcnemar_rag_vs_rag_masked_urgency.json",
+      "log": "results\\runs\\20261111-190402\\08_mcnemar_rag_vs_rag_masked_urgency.log"
     },
     {
       "step": "McNemar rag vs rag_masked (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_masked_predictions.csv --metric specialty --output results/mcnemar_rag_vs_rag_masked_specialty.json",
+      "log": "results\\runs\\20261111-190402\\09_mcnemar_rag_vs_rag_masked_specialty.log"
     },
     {
       "step": "McNemar rag vs rag_fixed (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_fixed_predictions.csv --metric urgency --output results/mcnemar_rag_vs_rag_fixed_urgency.json",
+      "log": "results\\runs\\20261111-190402\\10_mcnemar_rag_vs_rag_fixed_urgency.log"
     },
     {
       "step": "McNemar rag vs rag_fixed (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --output results/mcnemar_rag_vs_rag_fixed_specialty.json",
+      "log": "results\\runs\\20261111-190402\\11_mcnemar_rag_vs_rag_fixed_specialty.log"
     },
     {
       "step": "McNemar rag_masked vs rag_fixed (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/rag_masked_predictions.csv -b results/rag_fixed_predictions.csv --metric urgency --output results/mcnemar_rag_masked_vs_rag_fixed_urgency.json",
+      "log": "results\\runs\\20261111-190402\\12_mcnemar_rag_masked_vs_rag_fixed_urgency.log"
     },
     {
       "step": "McNemar rag_masked vs rag_fixed (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/rag_masked_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --output results/mcnemar_rag_masked_vs_rag_fixed_specialty.json",
+      "log": "results\\runs\\20261111-190402\\13_mcnemar_rag_masked_vs_rag_fixed_specialty.log"
     },
     {
       "step": "McNemar baseline vs baseline_rerun (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/baseline_predictions_rep2.csv --metric urgency --output results/mcnemar_baseline_vs_baseline_rerun_urgency.json",
+      "log": "results\\runs\\20261111-190402\\14_mcnemar_baseline_vs_baseline_rerun_urgency.log"
     },
     {
       "step": "McNemar baseline vs baseline_rerun (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/baseline_predictions_rep2.csv --metric specialty --output results/mcnemar_baseline_vs_baseline_rerun_specialty.json",
+      "log": "results\\runs\\20261111-190402\\15_mcnemar_baseline_vs_baseline_rerun_specialty.log"
     },
     {
       "step": "McNemar C1 rep2 vs rag (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep2.csv -b results/rag_predictions.csv --metric urgency --output results/robustness/mcnemar_baseline_rep2_vs_rag_urgency.json",
+      "log": "results\\runs\\20261111-190402\\16_mcnemar_c1_rep2_vs_rag_urgency.log"
     },
     {
       "step": "McNemar C1 rep2 vs rag_masked (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep2.csv -b results/rag_masked_predictions.csv --metric urgency --output results/robustness/mcnemar_baseline_rep2_vs_rag_masked_urgency.json",
+      "log": "results\\runs\\20261111-190402\\17_mcnemar_c1_rep2_vs_rag_masked_urgency.log"
     },
     {
       "step": "McNemar C1 rep2 vs rag (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep2.csv -b results/rag_predictions.csv --metric specialty --output results/robustness/mcnemar_baseline_rep2_vs_rag_specialty.json",
+      "log": "results\\runs\\20261111-190402\\18_mcnemar_c1_rep2_vs_rag_specialty.log"
     },
     {
       "step": "McNemar C1 rep2 vs rag_masked (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep2.csv -b results/rag_masked_predictions.csv --metric specialty --output results/robustness/mcnemar_baseline_rep2_vs_rag_masked_specialty.json",
+      "log": "results\\runs\\20261111-190402\\19_mcnemar_c1_rep2_vs_rag_masked_specialty.log"
     },
     {
       "step": "McNemar C1 rep3 vs rag (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep3.csv -b results/rag_predictions.csv --metric urgency --output results/robustness/mcnemar_baseline_rep3_vs_rag_urgency.json",
+      "log": "results\\runs\\20261111-190402\\20_mcnemar_c1_rep3_vs_rag_urgency.log"
     },
     {
       "step": "McNemar C1 rep3 vs rag_masked (urgency)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep3.csv -b results/rag_masked_predictions.csv --metric urgency --output results/robustness/mcnemar_baseline_rep3_vs_rag_masked_urgency.json",
+      "log": "results\\runs\\20261111-190402\\21_mcnemar_c1_rep3_vs_rag_masked_urgency.log"
     },
     {
       "step": "McNemar C1 rep3 vs rag (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep3.csv -b results/rag_predictions.csv --metric specialty --output results/robustness/mcnemar_baseline_rep3_vs_rag_specialty.json",
+      "log": "results\\runs\\20261111-190402\\22_mcnemar_c1_rep3_vs_rag_specialty.log"
     },
     {
       "step": "McNemar C1 rep3 vs rag_masked (specialty)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions_rep3.csv -b results/rag_masked_predictions.csv --metric specialty --output results/robustness/mcnemar_baseline_rep3_vs_rag_masked_specialty.json",
+      "log": "results\\runs\\20261111-190402\\23_mcnemar_c1_rep3_vs_rag_masked_specialty.log"
     },
     {
       "step": "McNemar baseline vs rag (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_baseline_vs_rag_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\24_mcnemar_baseline_vs_rag_specialty_mapped.log"
     },
     {
       "step": "McNemar baseline vs rag_masked (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_masked_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_baseline_vs_rag_masked_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\25_mcnemar_baseline_vs_rag_masked_specialty_mapped.log"
     },
     {
       "step": "McNemar baseline vs rag_fixed (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/baseline_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_baseline_vs_rag_fixed_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\26_mcnemar_baseline_vs_rag_fixed_specialty_mapped.log"
     },
     {
       "step": "McNemar rag vs rag_masked (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_masked_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_rag_vs_rag_masked_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\27_mcnemar_rag_vs_rag_masked_specialty_mapped.log"
     },
     {
       "step": "McNemar rag vs rag_fixed (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/rag_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_rag_vs_rag_fixed_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\28_mcnemar_rag_vs_rag_fixed_specialty_mapped.log"
     },
     {
       "step": "McNemar rag_masked vs rag_fixed (specialty, mapped)",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.1,
+      "cmd": "src/mcnemar.py -a results/rag_masked_predictions.csv -b results/rag_fixed_predictions.csv --metric specialty --mapped --output results/sensitivity/mcnemar_rag_masked_vs_rag_fixed_specialty_mapped.json",
+      "log": "results\\runs\\20261111-190402\\29_mcnemar_rag_masked_vs_rag_fixed_specialty_mapped.log"
     },
     {
       "step": "noise floor baseline",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/baseline_predictions.csv results/baseline_predictions_rep2.csv results/baseline_predictions_rep3.csv --output results/noise_baseline.json",
+      "log": "results\\runs\\20261111-190402\\30_noise_floor_baseline.log"
     },
     {
       "step": "noise floor baseline_variants",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/baseline_variants_predictions.csv results/baseline_variants_predictions_rep2.csv results/baseline_variants_predictions_rep3.csv --output results/noise_baseline_variants.json",
+      "log": "results\\runs\\20261111-190402\\31_noise_floor_baseline_variants.log"
     },
     {
       "step": "noise floor rag",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/rag_predictions.csv results/rag_predictions_rep2.csv results/rag_predictions_rep3.csv --output results/noise_rag.json",
+      "log": "results\\runs\\20261111-190402\\32_noise_floor_rag.log"
     },
     {
       "step": "noise floor rag_variants",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/rag_variants_predictions.csv results/rag_variants_predictions_rep2.csv results/rag_variants_predictions_rep3.csv --output results/noise_rag_variants.json",
+      "log": "results\\runs\\20261111-190402\\33_noise_floor_rag_variants.log"
     },
     {
       "step": "noise floor rag_masked",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/rag_masked_predictions.csv results/rag_masked_predictions_rep2.csv results/rag_masked_predictions_rep3.csv --output results/noise_rag_masked.json",
+      "log": "results\\runs\\20261111-190402\\34_noise_floor_rag_masked.log"
     },
     {
       "step": "noise floor rag_masked_variants",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/rag_masked_variants_predictions.csv results/rag_masked_variants_predictions_rep2.csv results/rag_masked_variants_predictions_rep3.csv --output results/noise_rag_masked_variants.json",
+      "log": "results\\runs\\20261111-190402\\35_noise_floor_rag_masked_variants.log"
     },
     {
       "step": "noise floor rag_fixed",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/repeat_agreement.py --runs results/rag_fixed_predictions.csv results/rag_fixed_predictions_rep2.csv results/rag_fixed_predictions_rep3.csv --output results/noise_rag_fixed.json",
+      "log": "results\\runs\\20261111-190402\\36_noise_floor_rag_fixed.log"
     },
     {
       "step": "fairness tests baseline",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/fairness_tests.py --runs results/baseline_variants_predictions.csv results/baseline_variants_predictions_rep2.csv results/baseline_variants_predictions_rep3.csv --output results/fairness_baseline.json",
+      "log": "results\\runs\\20261111-190402\\37_fairness_tests_baseline.log"
     },
     {
       "step": "fairness tests rag",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/fairness_tests.py --runs results/rag_variants_predictions.csv results/rag_variants_predictions_rep2.csv results/rag_variants_predictions_rep3.csv --output results/fairness_rag.json",
+      "log": "results\\runs\\20261111-190402\\38_fairness_tests_rag.log"
     },
     {
       "step": "fairness tests rag_masked",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 1.2,
+      "cmd": "src/fairness_tests.py --runs results/rag_masked_variants_predictions.csv results/rag_masked_variants_predictions_rep2.csv results/rag_masked_variants_predictions_rep3.csv --output results/fairness_rag_masked.json",
+      "log": "results\\runs\\20261111-190402\\39_fairness_tests_rag_masked.log"
     },
     {
       "step": "retrieval statistics",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.3,
+      "cmd": "src/retrieval_stats.py",
+      "log": "results\\runs\\20261111-190402\\40_retrieval_statistics.log"
     },
     {
       "step": "error cases",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/error_cases.py --config rag",
+      "log": "results\\runs\\20261111-190402\\41_error_cases.log"
     },
     {
       "step": "retrieval relevance scores",
-      "status": "up-to-date"
+      "status": "ok",
+      "seconds": 0.2,
+      "cmd": "src/retrieval_eval.py score --sheet results/retrieval_rating_sheet_v2_rated.csv",
+      "log": "results\\runs\\20261111-190402\\42_retrieval_relevance_scores.log"
     },
     {
       "step": "build single-file report",
       "status": "ok",
-      "seconds": 0.1,
+      "seconds": 0.4,
       "cmd": "src/build_report.py",
-      "log": "results\\runs\\20261022-134435\\43_build_single_file_report.log"
+      "log": "results\\runs\\20261111-190402\\43_build_single_file_report.log"
     }
   ],
   "failed_at": null,
-  "run_id": "20261022-134435"
+  "run_id": "20261111-190402"
 }

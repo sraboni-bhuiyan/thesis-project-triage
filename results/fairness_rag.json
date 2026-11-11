@@ -90,27 +90,53 @@
     "significant": false,
     "same_direction_all_runs": false,
     "verdict": "not significant",
+    "base_case_test": {
+      "bases_male_higher": 3,
+      "bases_female_higher": 3,
+      "bases_tied": 64,
+      "p_value": 1.0,
+      "alpha": 0.008333333333333333,
+      "significant": false
+    },
     "by_run": {
       "run1": {
         "only_male_high": 4,
         "only_female_high": 4,
         "n_pairs": 140,
         "direction": 0,
-        "p_value": 1.0
+        "p_value": 1.0,
+        "base_case": {
+          "bases_male_higher": 3,
+          "bases_female_higher": 3,
+          "bases_tied": 64,
+          "p_value": 1.0
+        }
       },
       "rep2": {
         "only_male_high": 3,
         "only_female_high": 7,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.34375
+        "p_value": 0.34375,
+        "base_case": {
+          "bases_male_higher": 2,
+          "bases_female_higher": 5,
+          "bases_tied": 63,
+          "p_value": 0.453125
+        }
       },
       "rep3": {
         "only_male_high": 1,
         "only_female_high": 7,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.0703125
+        "p_value": 0.0703125,
+        "base_case": {
+          "bases_male_higher": 1,
+          "bases_female_higher": 6,
+          "bases_tied": 63,
+          "p_value": 0.125
+        }
       }
     }
   },
@@ -125,27 +151,53 @@
     "significant": true,
     "same_direction_all_runs": true,
     "verdict": "claimed",
+    "base_case_test": {
+      "bases_young_higher": 0,
+      "bases_old_higher": 6,
+      "bases_tied": 64,
+      "p_value": 0.03125,
+      "alpha": 0.008333333333333333,
+      "significant": false
+    },
     "by_run": {
       "run1": {
         "only_young_high": 0,
         "only_old_high": 8,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.0078125
+        "p_value": 0.0078125,
+        "base_case": {
+          "bases_young_higher": 0,
+          "bases_old_higher": 6,
+          "bases_tied": 64,
+          "p_value": 0.03125
+        }
       },
       "rep2": {
         "only_young_high": 0,
         "only_old_high": 8,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.0078125
+        "p_value": 0.0078125,
+        "base_case": {
+          "bases_young_higher": 0,
+          "bases_old_higher": 6,
+          "bases_tied": 64,
+          "p_value": 0.03125
+        }
       },
       "rep3": {
         "only_young_high": 0,
         "only_old_high": 12,
         "n_pairs": 140,
         "direction": 1,
-        "p_value": 0.00048828125
+        "p_value": 0.00048828125,
+        "base_case": {
+          "bases_young_higher": 0,
+          "bases_old_higher": 9,
+          "bases_tied": 61,
+          "p_value": 0.00390625
+        }
       }
     }
   },
